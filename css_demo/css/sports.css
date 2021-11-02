@@ -1,0 +1,59 @@
+body {
+	font-size: 16px;
+}
+
+/* 体育页面头部样式设置 */
+.title {
+	font-size: 36px;
+	text-align: center;
+}
+
+.title_2 {
+	font-size: 18px;
+	font-family: "microsoft yahei";
+	text-align: center;
+}
+
+.title_time {
+	color: lightsteelblue;
+}
+
+.pinglun {
+	color: firebrick;
+	text-decoration: underline;
+}
+
+.save {
+	color: blue;
+}
+
+.shuru {
+	color: darkred;
+	font-size: 12px;
+	width: 200px;
+	height: 25px;
+}
+
+.btn {
+	color: seagreen;
+	font-size: 14px;
+	font-weight: 700;
+	width: 80px;
+	height: 30px;
+	background-color: lightblue;
+}
+
+/* 正文页面样式设置 */
+.main_body {
+	font-size: 18px;
+	font-family: "microsoft sans serif";
+	text-indent: 2em;
+}
+
+.weibo {
+	color: mediumaquamarine;
+}
+
+.news_name, .add_bold {
+	font-weight: 700;
+}

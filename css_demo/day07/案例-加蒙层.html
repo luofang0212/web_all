@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>案例-加蒙层</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.pic {
+				position: relative;
+				width: 222px;
+				height: 220px;
+				margin: 100px auto;
+			}
+
+			.shade {
+				display: none;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 222px;
+				height: 220px;
+				background: rgba(0, 0, 0, 0.3) url(images/arr.png) no-repeat center center;
+
+			}
+
+			.pic a:hover .shade {
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="pic">
+			<a href="">
+				<!-- 图片 -->
+				<img src="images/liuman.jpg" alt="">
+				<!-- 遮罩蒙层 -->
+				<div class="shade"></div>
+			</a>
+		</div>
+
+	</body>
+</html>
