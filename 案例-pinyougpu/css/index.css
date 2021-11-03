@@ -1,0 +1,107 @@
+/* 第一部分 开始 */
+/* .slider_banner 开始 */
+.slider_banner {
+	position: relative;
+	float: left;
+	margin: 10px 10px 0 10px;
+	width: 712px;
+	height: 455px;
+}
+
+.slider_banner img {
+	width: 712px;
+	height: 455px;
+}
+
+/* .slider_banner 结束 */
+
+/* 快报 start */
+.P_news {
+	position: relative;
+	float: left;
+	margin-top: 10px;
+	width: 246px;
+	height: 372px;
+	background-color: #ffffff;
+}
+/* 标题部分 */
+.P_news .news_hd {
+	height: 34px;
+	color: #333333;
+	line-height: 34px;
+	border: 1px solid #ccc;
+	border-bottom: 1px dotted #ccc;
+}
+
+.news_hd h5 {
+	float: left;
+	margin-left: 14px;
+	font-size: 14px;
+	font-weight: 400;
+}
+
+.news_hd span {
+	float: right;
+	margin-right: 14px;
+	font-size: 12px;
+	font-weight: 400;
+}
+
+.news_hd span::after {
+	content: "\ea50";
+	float: right;
+	font-family: 'icomoon';
+	font-size: 12px;
+	line-height: 36px;
+}
+/* 快报内容 */
+.news_content{
+	height: 122px;
+	padding: 8px 14px 0 14px;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	
+}
+
+.news_content a{
+	display: block;
+	margin-bottom: 8px;
+	font-size: 12px;
+	color: #666666;
+}
+
+.news_content strong {
+	font-weight: 500;
+}
+
+/* icon 列表 */
+.icon_list{
+	/* overflow: hidden; */
+	height: 208px;
+	/* background-color: pink; */
+	border-top: 1px solid #ccc;	
+}
+
+.icon_list li{
+	float: left;
+	width: 62px;
+	height: 70px;
+	margin-left: -1px;
+	margin-bottom: -1px;
+	border: 1px solid #ccc;
+	/* border-collapse: collapse; */
+}
+
+.b_gg{
+	float: left;
+	margin-top: 5px;
+	overflow: hidden;
+	height: 75px;
+	background-color: skyblue;
+}
+.b_gg img{
+	height: 75px;
+}
+
+/* 快报 end */
+/* 第一部分 结束 */
