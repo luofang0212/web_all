@@ -25,29 +25,34 @@
 	background-color: #ffffff;
 }
 /* 标题部分 */
-.P_news .news_hd {
-	height: 34px;
-	color: #333333;
+.news_hd {
+	height: 157px;
 	line-height: 34px;
 	border: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+.news_title {
+	height: 34px;
+	line-height: 34px;
+	color: #666666;
 	border-bottom: 1px dotted #ccc;
 }
 
-.news_hd h5 {
+.news_title h5 {
 	float: left;
 	margin-left: 14px;
 	font-size: 14px;
 	font-weight: 400;
 }
 
-.news_hd span {
+.news_title span {
 	float: right;
 	margin-right: 14px;
 	font-size: 12px;
 	font-weight: 400;
 }
 
-.news_hd span::after {
+.news_title span::after {
 	content: "\ea50";
 	float: right;
 	font-family: 'icomoon';
@@ -55,17 +60,15 @@
 	line-height: 36px;
 }
 /* 快报内容 */
-.news_content{
+.news_hd .news_content{
 	height: 122px;
-	padding: 8px 14px 0 14px;
-	border-left: 1px solid #ccc;
-	border-right: 1px solid #ccc;
-	
+	padding: 0 12px;
 }
 
 .news_content a{
 	display: block;
 	margin-bottom: 8px;
+	height: 14px;
 	font-size: 12px;
 	color: #666666;
 }
@@ -76,31 +79,61 @@
 
 /* icon 列表 */
 .icon_list{
-	/* overflow: hidden; */
+	overflow: hidden;
 	height: 208px;
-	/* background-color: pink; */
-	border-top: 1px solid #ccc;	
+	border: 1px solid #ccc;	
+	border-top: none;
+	border-left: none;
 }
 
+.icon_list ul{
+	width: 251px;
+}
 .icon_list li{
 	float: left;
-	width: 62px;
-	height: 70px;
-	margin-left: -1px;
-	margin-bottom: -1px;
-	border: 1px solid #ccc;
-	/* border-collapse: collapse; */
+	width: 61px;
+	height: 69px;
+	border-left: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	text-align: center;
 }
 
+.icon_list li i{
+	display: block;
+	font-size: 10px;
+	color: #333;
+	line-height: 8px;
+	
+}
+.icon_list li i::before{
+	content: "";
+	display: block;
+	width: 24px;
+	height: 24px;
+	margin: 14px auto;
+	font-size: 14px;
+	background: url(../img/icons.png) no-repeat;
+}	
+
+.icon_list li i:nth-of-type(1)::before{
+	background-position: -17px -16px;
+}
+
+.icon_list li i:nth-of-type(2)::before{
+	background-position: -78px -16px;
+}
+
+
+
 .b_gg{
+	overflow: hidden;
 	float: left;
 	margin-top: 5px;
-	overflow: hidden;
+	width: 246px;
 	height: 75px;
-	background-color: skyblue;
 }
 .b_gg img{
-	height: 75px;
+	width: 246px;
 }
 
 /* 快报 end */
