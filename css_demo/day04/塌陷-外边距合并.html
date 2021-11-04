@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>相邻块元素垂直外边距的合并-塌陷</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			.one{
+				width: 100px;
+				height: 100px;
+				background-color: pink;
+				margin-bottom: 10px;
+			}
+			.two{
+				margin-top: 20px;
+				width: 100px;
+				height: 100px;
+				background-color: skyblue;
+			}
+			/* #### 相邻块元素垂直外边距的合并
+				- 当上下相邻的两个块元素相遇时，如果上面的元素有下外边距margin-bottom
+				- 下面的元素有上外边距margin-top，则他们之间的垂直间距不是margin-bottom与margin-top之和 
+				**取两个值中的较大者**这种现象被称为相邻块元素垂直外边距的合并（也称外边距塌陷）。
+			*/
+		</style>
+	</head>
+	<body>
+		<div class="one"></div>
+		<div class="two"></div>
+	</body>
+</html>
