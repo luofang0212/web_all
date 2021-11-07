@@ -1,0 +1,216 @@
+/* header部分 */
+.dropdown .dt {
+	display: none;
+}
+
+
+.skill {
+	position: absolute;
+	top: 38px;
+	left: 184px;
+	height: 28px;
+	padding: 5px 14px 0 14px;
+	border-left: 1px solid #C81623;
+
+}
+
+.skill img {
+	width: 57px;
+	height: 27px;
+
+}
+
+/* 导航栏 开始*/
+/* 左侧 */
+.nav .w {
+	position: relative;
+}
+
+.nav_left ul {
+	position: absolute;
+	top: 22px;
+	left: -28px;
+}
+
+.nav_left ul li {
+	float: left;
+	padding: 0 28px;
+	/* line-height: 64px; */
+}
+
+.nav_left li a {
+	display: block;
+	font-size: 16px;
+	font-weight: 700;
+	color: #000000;
+}
+
+/* 右侧 */
+.nav_right {
+	position: absolute;
+	top: 22px;
+	left: 370px
+}
+
+.nav_right li {
+	float: left;
+	padding: 0 12px;
+}
+
+.nav_right li a {
+	font-size: 14px;
+	color: #666666;
+}
+
+.nav_right li i {
+	font-family: 'icomoon';
+	font-size: 18px;
+	color: #666666;
+}
+
+.nav_right li a:hover i {
+	color: #C81623;
+}
+
+/* 导航栏结束 */
+
+/* 主体开始 */
+/* main_banner start */
+.main_banner {
+	height: 120px;
+}
+
+.main_banner img {
+	height: 120px;
+}
+
+/* main_banner end */
+
+/* goods_items start */
+.goods_items {
+	margin-top: 24px;
+}
+
+.goods_items li {
+	position: relative;
+	float: left;
+	margin-bottom: 24px;
+	width: 300px;
+	height: 460px;
+}
+
+.goods_items li a {
+	position: absolute;
+	top: 0;
+	left: 5px;
+	display: block;
+	width: 290px;
+	height: 460px;
+}
+
+.goods_items a img {
+	width: 290px;
+	height: 284px;
+}
+
+.goods_items .g_detail {
+	margin-top: 14px;
+	padding: 0 12px;
+}
+
+.g_name {
+	color: #666666;
+	font-size: 14px;
+}
+
+.g_detail .price {
+	font-size: 22px;
+	color: #e60012;
+}
+
+.g_detail .price::before {
+	content: "￥";
+	font-size: 14px;
+	color: #e60012;
+}
+
+.g_detail .orign_price {
+	margin-left: 5px;
+	font-size: 14px;
+	color: #a4a4a4;
+	text-decoration: line-through;
+}
+
+.g_detail .orign_price::before {
+	content: "￥";
+	font-size: 12px;
+	color: #a4a4a4;
+}
+
+.goods_items .selled {
+	font-size: 14px;
+	color: #a4a4a4;
+}
+
+.goods_items .selled_jindu {
+	margin: 0 5px;
+	width: 135px;
+	height: 16px;
+}
+
+.goods_items .surplus {
+	font-size: 16px;
+	color: #e60012;
+}
+
+.goods_items .surplus::before {
+	content: "剩余";
+	font-size: 14px;
+	color: #666666;
+}
+
+.goods_items .surplus::after {
+	content: "件";
+	font-size: 14px;
+	color: #666666;
+}
+
+.goods_items button {
+	margin-top: 14px;
+	width: 290px;
+	height: 51px;
+	font-size: 20px;
+	color: #FFFFFF;
+	text-align: center;
+	line-height: 51px;
+	background: url(../upload/secBuy.png) no-repeat center center;
+	cursor: pointer;
+}
+
+.goods_items li a:hover {
+	border: 1px solid #b1191a;
+}
+
+/* goods_items end */
+
+/* 主体结束 */
+
+/* 固定图标  start*/
+
+.back_top{
+	position: fixed;
+	bottom: 50%;
+	left: 50%;
+	margin-left: 614px;
+	margin-bottom: -15%;
+	width: 70px;
+	height: 140px;
+	z-index: 999;
+}
+
+.back_top img {
+	width: 70px;
+	height: 140px;
+}
+
+/* 固定图标  end*/
