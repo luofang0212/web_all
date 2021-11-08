@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>案例-小米盒子</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			body {
+				background-color: #fff;
+			}
+
+			li {
+				list-style: none;
+				background-color: #fff;
+				box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.03);
+			}
+
+			a {
+				text-decoration: none;
+				color: #000000;
+			}
+
+			.box {
+				width: 244px;
+			}
+
+			.box li {
+				overflow: hidden;
+				float: left;
+				padding: 5px 5px 48px 5px;
+				width: 234px;
+				height: 260px;
+				text-align: center;
+			}
+			.box li:hover .review{
+				transform: translateY(-30px);
+			}
+
+			.box h5 {
+				font-size: 16px;
+				color: #333333;
+				text-align: center;
+			}
+
+			.price {
+				margin-top: 6px;
+				font-size: 18px;
+				color: orange;
+				text-align: center;
+			}
+
+			.price::after {
+				content: "2999元";
+				margin-left: 3px;
+				color: #ccc;
+				font-size: 16px;
+				text-decoration: line-through;
+			}
+
+			.review {
+				padding: 10px;
+				width: 220px;
+				height: 45px;
+				background-color: orange;
+				color: #fff;
+				text-align: center;
+				transform: translateY(40px);
+				transition: all 0.5s;
+				
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<ul>
+				<li>
+					<a href="#">
+						<img src="images/pms_1524883847.49276938!220x220.jpg" alt="">
+						<h5>小米电视4A 43英寸青春版</h5>
+						<div class="price">
+							<span>2000元</span>
+						</div>
+						<div class="review">
+							<p>一如既往的好，小米情怀</p>
+							<p>一如既往的好，小米情怀</p>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>translate让一个盒子水平居中对齐</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			/* 配合定位 和 translate进行操作 */
+			.father {
+				position: relative;
+				width: 200px;
+				height: 300px;
+				border: 1px solid #2E8B57;
+			}
+			.son {
+				position: absolute;
+				top:50%;
+				left: 50%;
+				width: 50px;
+				height: 50px;
+				background-color: pink;
+				transform: translate(-50%,-50%);
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div class="father">
+			<div class="son"></div>
+		</div>
+	</body>
+</html>
