@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>动画简写</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			/* 定义动画 */
+			@keyframes move {
+				0% {
+					width: 100px;
+				}
+
+				25% {
+					width: 500px;
+				}
+
+				100% {
+					width: 1000px;
+				}
+			}
+
+			div {
+				width: 20px;
+				height: 20px;
+				background-color: skyblue;
+				transition: all 0.4s;
+				/* animation-name: move;
+				animation-duration: 0.8s;
+				animation-timing-function: linear;
+				animation-delay: 0.5s;
+				animation-iteration-count: 1;
+				animation-fill-mode:forwards; */
+				/* animation: 动画名称 持续时间 运动曲线 何时开始 播放次数 是否反方向 起始与结束状态 */
+				animation: move 1s  ease 5 alternate forwards;
+			}
+
+			div:hover {
+				animation-play-state: paused;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>

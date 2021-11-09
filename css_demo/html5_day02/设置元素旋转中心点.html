@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>设置元素旋转中心点</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			div{
+				margin: 50px auto;
+				width: 150px;
+				height: 160px;
+				background-color: skyblue;
+				/* 改变中心点 */
+				transform-origin: right bottom;
+				transition: all 0.4s;
+			}
+			div:hover{
+				transform: rotate(180deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>

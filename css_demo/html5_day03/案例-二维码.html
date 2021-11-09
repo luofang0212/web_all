@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>案例-二维码</title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+
+			div {
+				width: 230px;
+				height: 300px;
+				background-color: rgba(220, 20, 60, 0.3);
+			}
+				
+			div p{
+				padding: 5px 0;
+				width: 230px;
+				height: 18px;
+				font-size: 18px;
+				color: #333333;
+				text-align: center;
+				line-height: 18px;
+			}
+			.erweima{
+				display: block;
+				width: 200px;
+				margin: 14px auto 0 auto;
+				
+			}
+			.line {
+				display: block;
+				width: 220px;
+				margin: 0 auto;
+				transition: all 0.4s;
+				animation: move 3s linear infinite alternate;
+			}
+			
+			@keyframes move{
+				0%{
+					transform: translate(0,-10px);
+				}
+				100%{
+					transform: translate(0,-210px);
+				}
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div>
+			<p>下载</p>
+			<img src="images/yinyanerweima.png" alt="" class="erweima">
+			<img src="images/line_dd0b705.png" class="line" alt="">
+		</div>
+	</body>
+</html>

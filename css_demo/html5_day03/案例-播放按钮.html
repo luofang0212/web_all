@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>按钮-播放按钮</title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+
+			.box {
+				position: relative;
+				width: 200px;
+				height: 200px;
+				background-color: rgba(139, 69, 19, 0.2);
+				border: 1px solid transparent;
+				cursor: pointer;
+			}
+			
+			.play{
+				margin: 60px auto 0 auto;
+				width: 90px;
+				height: 90px;
+				background: rgba(139, 69, 19, 0.3);
+				background-size: 80px;
+				border-radius: 20px;
+				transition: all 0.4s;
+				
+			
+			}
+			.play_btn{
+				position: absolute;
+				top:50%;
+				left: 50%;
+				margin-top: -35px;
+				margin-left: -40px;
+				display: block;
+				background: url(images/paly.png) no-repeat center center;
+				background-size: 80px 80px;
+				width: 80px;
+				height: 80px;
+				text-align: center;
+			}
+			
+			.box:hover .play{
+				animation: move 6s linear infinite;
+			}
+			.box:hover .play_btn{
+				background: url(images/stop.png) no-repeat center center;
+				background-size: 80px 80px;
+			}
+				
+			@keyframes move{
+				0%{
+					transform: rotate(0deg);
+				}
+					
+				100%{
+					transform: rotate(360deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="play"></div>
+			<i class="play_btn"></i>
+		</div>
+	</body>
+</html>
