@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>3d-导航栏</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			li {
+				list-style: none;
+			}
+
+			a {
+				text-decoration: none;
+			}
+
+			.nav {
+				margin: 10px auto;
+				width: 300px;
+				height: 38px;
+			}
+
+			.nav li {
+				position: relative;
+				float: left;
+				perspective: 300px
+				
+			}
+
+			.sub_nav {
+				width: 100px;
+				height: 38px;
+				transform-style: preserve-3d;
+				transition: all 0.4s;
+				
+			}
+
+			.sub_nav:hover {
+				transform: rotateX(90deg);
+			}
+
+			.nav li a {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100px;
+				height: 38px;
+				font-size: 18px;
+				color: #fff;
+				text-align: center;
+				line-height: 38px;
+			}
+
+			.nav li .btn1 {
+				background-color: pink;
+				z-index: 1;
+				transform: translateZ(19px);
+			}
+
+			.nav li .btn2 {
+				background-color: purple;
+				transform: translateY(19px) rotateX(-90deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="nav">
+			<ul>
+				<li>
+					<div class="sub_nav">
+						<a href="#" class="btn1">我是菜单</a>
+						<a href="#" class="btn2">超级菜单</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>
