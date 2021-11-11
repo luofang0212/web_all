@@ -1,3 +1,7 @@
+*{
+	margin: 0;
+	padding: 0;
+}
 body {
 	/*CSS3盒子模型*/
 	box-sizing: border-box;
@@ -8,9 +12,41 @@ body {
 	-webkit-appearance: none;
 	/*禁用长按页面时的弹出菜单*/
 	-webkit-appearance: none;
+	
+	margin: 0 auto;
+	background-color: #f6f6f6;
+	min-width: 320px;
+	max-width: 640px;
+
+	color: #666;
+	font-size: 14px;
+	font-family: "ya-apple-system", "microsoft yahei", "Helvetica", "sans-serif";
+	line-height: 1.5;
 }
 
 img,
 a {
 	-webkit-touch-callout: none;
+}
+
+a{
+	text-decoration: none;
+}
+
+li{
+	list-style: none;
+}
+
+/* 清除浮动 */
+.clearfix:after {
+	content: "";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+
+}
+
+.clearfix {
+	*zoom: 1
 }

@@ -4,12 +4,11 @@
 		<meta charset="utf-8">
 		<title>案例-耳机按钮</title>
 		<style>
-			* {
+			*{
 				margin: 0;
 				padding: 0;
 			}
-
-			div {
+			div{
 				overflow: hidden;
 				position: relative;
 				margin: 50px auto;
@@ -21,29 +20,25 @@
 				border-radius: 10px;
 				cursor: pointer;
 			}
-
-			div::after {
+			div::after{
 				content: "";
 				position: absolute;
-				top: 0;
+				top:0;
 				left: 0;
 				display: block;
 				width: 100px;
 				height: 35px;
 				border-radius: 10px;
-				background-color: rgba(0, 0, 0, 0.1);
-				transform: translateY(35px);
+				background-color: rgba(0,0,0,0.3);
+				transform-origin: right bottom;
+				transform: rotate(90deg);
 				transition: all 0.4s;
 			}
 			
-			div:hover{
-				border: 1px solid orange;
+			div:hover::after{
+				transform: rotate(360deg);
 			}
 			
-			div:hover::after {
-				transform: translateY(0);
-				
-			}
 		</style>
 	</head>
 	<body>

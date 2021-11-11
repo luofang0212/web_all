@@ -1,0 +1,106 @@
+/* 背景图片 */
+header {
+	position: relative;
+	height: 44px;
+	background-color: #0093D9
+}
+
+header .logo {
+	position: absolute;
+	top: 0;
+	left: 110px;
+	width: 120px;
+	height: 44px;
+	background: url(../images/index_service_sprite@2x.png) no-repeat;
+	background-size: 200px 80px;
+	background-position: -80px 0px;
+}
+
+
+.topnav {
+	position: absolute;
+	top: 0;
+	left: 210px;
+}
+
+.topnav li {
+	float: left;
+}
+
+.topnav li a {
+	float: left;
+	display: block;
+	padding: 0 34px;
+	color: rgba(255, 255, 255, 0.6);
+	font-size: 16px;
+	text-align: center;
+	line-height: 44px;
+}
+
+.topnav li a:hover {
+	color: #FFFfff;
+}
+
+
+.right-info {
+	position: absolute;
+	top: 0;
+	right: 130px;
+	margin-right: -10px;
+}
+
+.right-info li {
+	float: left;
+	height: 44px;
+}
+
+.right-info .searchbox {
+	position: relative;
+	width: 40px;
+	height: 44px;
+	transition: width 0.8s ease-in;
+}
+.right-info .searchbox:hover {
+	width: 200px;
+}
+
+.right-info .searchbox input {
+	opacity: 1;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	margin-top: -16px;
+	width: 180px;
+	height: 32px;
+	text-indent: 1em;
+}
+
+.searchbox .search {
+	font-family: 'icomoon';
+	position: absolute;
+	top: 50%;
+	right: 28px;
+	margin-top: -12px;
+	font-size: 20px;
+	color: #999999;
+	cursor: pointer;
+
+
+}
+
+.searchbox:hover input {
+	opacity: 1;
+}
+
+.right-info .loginbox a {
+	display: block;
+	width: 44px;
+	height: 44px;
+	line-height: 44px;
+	color: #FFFFFF;
+	font-size: 18px;
+}
+
+.new {
+	margin-top: 10px;
+}
