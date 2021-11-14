@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>flex_03</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.box {
+				display: flex;
+				margin: 20px auto;
+				width: 570px;
+				height: 400px;
+				background-color: pink;
+				flex-flow: row wrap;
+				justify-content: flex-start;
+				align-content: flex-start;
+			}
+
+			.box div {
+				flex:2;
+				margin: 2px;
+				width: 70px;
+				height: 70px;
+				background-color: purple;
+				text-align: center;
+				line-height: 70px;
+				color: #fff;
+				font-size: 18px;
+			}
+
+			.box div:nth-child(3) {
+				flex:3;
+				order: 1;
+				/* align-self: center; */
+				background-color: green;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+			<div>6</div>
+			<div>7</div>
+			<div>8</div>
+		</div>
+	</body>
+</html>

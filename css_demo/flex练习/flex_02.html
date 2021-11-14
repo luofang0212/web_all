@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>flex_02</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.box {
+				display: flex;
+				margin: 20px auto;
+				width: 300px;
+				height: 400px;
+				background-color: pink;
+				/* flex-flow: row wrap; */
+				/* flex-direction: row; */
+				justify-content: flex-start;
+				/* justify-content: flex-end; */
+				/* justify-content: center; */
+				/* align-items: center; */
+				/* flex-wrap: wrap; */
+				/* align-items: flex-start; */
+				/* align-items: flex-end; */
+				/* align-content: flex-end; */
+				/* align-content: center; */
+				/* align-content: space-around; */
+				/* align-content: stretch; */
+				
+			}
+
+			.box div {
+				margin: 2px;
+				width: 70px;
+				height: 70px;
+				background-color: purple;
+
+			}
+
+			.box div:nth-child(3) {
+				background-color: green;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</body>
+</html>
