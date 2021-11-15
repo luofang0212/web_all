@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 利用flex布局实现，左右两侧宽度100px固定，中间宽度根据屏幕宽度自适应 -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-color: #ccc;
+        }
+        
+        .box {
+            display: flex;
+            margin: 20px auto;
+            width: 100%;
+            height: 50px;
+            max-width: 750px;
+            min-width: 320px;
+        }
+        
+        .box div {
+            width: 100px;
+            height: 50px;
+            background-color: pink;
+        }
+        
+        .box div:nth-child(2) {
+            flex: 1;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+
+</html>
