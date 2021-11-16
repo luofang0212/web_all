@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>图片缩放</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			div{
+				margin:50px auto;
+				width: 275px;
+				height: 185px;
+				border: 1px solid orange;
+			}
+			div img{
+				transition: all 0.4s;
+				transform-origin: bottom right;
+			}
+		
+			div img:hover{
+				/* transform: scale(1.1,1.1); */
+				/* transform: scale(1.5,1); */
+				transform: scale(0.5,0.5);
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<img src="images/bgi.jpg" alt="">
+		</div>
+	</body>
+</html>

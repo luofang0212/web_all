@@ -1,0 +1,618 @@
+/* 公共样式 */
+.title_hd {
+	margin-top: 24px;
+	height: 24px;
+	/* background-color: pink; */
+}
+
+.title_hd h5 {
+	font-size: 18px;
+	color: #333333;
+	font-weight: 400;
+}
+
+/* 第一部分 开始 */
+/* .slider_banner 开始 */
+.slider_banner {
+	position: relative;
+	float: left;
+	margin: 10px 14px 0 10px;
+	width: 712px;
+	height: 455px;
+}
+
+.slider_banner img {
+	width: 712px;
+	height: 455px;
+}
+
+/* .slider_banner 结束 */
+
+/* 快报 start */
+.P_news {
+	position: relative;
+	float: left;
+	margin-top: 10px;
+	width: 250px;
+	height: 372px;
+	background-color: #ffffff;
+}
+
+/* 标题部分 */
+.news_hd {
+	height: 157px;
+	line-height: 34px;
+	border: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+
+.news_title {
+	height: 34px;
+	line-height: 34px;
+	color: #666666;
+	border-bottom: 1px dotted #ccc;
+}
+
+.news_title h5 {
+	float: left;
+	margin-left: 14px;
+	font-size: 14px;
+	font-weight: 400;
+}
+
+.news_title span {
+	float: right;
+	margin-right: 14px;
+	font-size: 12px;
+	font-weight: 400;
+}
+
+.news_title span::after {
+	content: "\ea50";
+	float: right;
+	font-family: 'icomoon';
+	font-size: 12px;
+	line-height: 36px;
+}
+
+/* 快报内容 */
+.news_hd .news_content {
+	height: 122px;
+	padding: 0 12px;
+}
+
+.news_content a {
+	display: block;
+	margin-bottom: 8px;
+	height: 14px;
+	font-size: 12px;
+	color: #666666;
+}
+
+.news_content strong {
+	font-weight: 500;
+}
+
+/* icon 列表 */
+.icon_list {
+	overflow: hidden;
+	height: 208px;
+	border: 1px solid #ccc;
+	border-top: none;
+	border-left: none;
+}
+
+.icon_list ul {
+	width: 251px;
+}
+
+.icon_list li {
+	float: left;
+	width: 61px;
+	height: 69px;
+	border-left: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	text-align: center;
+}
+
+.icon_list li i {
+	display: block;
+	font-size: 10px;
+	color: #333;
+	line-height: 8px;
+	cursor: pointer;
+}
+
+.icon_list li:nth-of-type(3) {
+	position: relative;
+}
+
+.icon_list li:nth-of-type(3) i::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 12px;
+	height: 15px;
+	background: url(../img/jian.jpg) no-repeat;
+
+}
+
+.icon_list li i::before {
+	content: "";
+	display: block;
+	width: 24px;
+	height: 24px;
+	margin: 14px auto;
+	font-size: 14px;
+	background: url(../img/icons.png) no-repeat;
+}
+
+.icon_list li:nth-of-type(1) i::before {
+	background-position: -17px -16px;
+}
+
+.icon_list li:nth-of-type(2) i::before {
+	background-position: -78px -16px;
+}
+
+.icon_list li:nth-of-type(3) i::before {
+	background-position: -142px -16px;
+}
+
+.icon_list li:nth-of-type(4) i::before {
+	background-position: -205px -16px;
+}
+
+.icon_list li:nth-of-type(5) i::before {
+	background-position: -18px -87px;
+}
+
+
+.icon_list li:nth-of-type(6) i::before {
+	background-position: -78px -87px;
+}
+
+.icon_list li:nth-of-type(7) i::before {
+	background-position: -143px -87px;
+}
+
+.icon_list li:nth-of-type(8) i::before {
+	background-position: -211px -87px;
+}
+
+.icon_list li:nth-of-type(9) i::before {
+	background-position: -18px -158px;
+}
+
+
+.icon_list li:nth-of-type(10) i::before {
+	background-position: -78px -158px;
+}
+
+.icon_list li:nth-of-type(11) i::before {
+	background-position: -143px -155px;
+}
+
+.icon_list li:nth-of-type(12) i::before {
+	background-position: -208px -158px;
+}
+
+.b_gg {
+	overflow: hidden;
+	float: left;
+	margin-top: 10px;
+	width: 252px;
+	height: 76px;
+	cursor: pointer;
+}
+
+.b_gg img {
+	width: 252px;
+}
+
+/* 快报 end */
+/* 第一部分 结束 */
+
+
+/* 今日推荐 第二部分 开始 */
+.recomment {
+	overflow: hidden;
+	height: 164px;
+	margin-top: 12px;
+}
+
+.recomment .recom-hd {
+	float: left;
+	width: 210px;
+	height: 100%;
+	background-color: #5c5251;
+	cursor: default;
+}
+
+.recom-hd i {
+	font-family: 'icomoon';
+	display: block;
+	width: 91px;
+	font-size: 68px;
+	color: #ffffff;
+	margin: 24px auto 12px auto;
+	text-align: center;
+}
+
+.recom-hd p {
+	color: #ffffff;
+	font-size: 18px;
+	text-align: center;
+	letter-spacing: 3px;
+}
+
+.recomment .recom-bd {
+	float: left;
+	width: 990px;
+	height: 100%;
+	background-color: #ebebeb;
+}
+
+.recom-bd li {
+	float: left;
+	overflow: hidden;
+	width: 247px;
+	height: 100%;
+}
+
+/* 今日推荐 第二部分 结束 */
+
+/* 猜你喜欢 start */
+
+.guess_hd {
+	height: 24px;
+	margin: 24px 0 8px 0;
+}
+
+/* 头部 */
+.guess_hd h5 {
+	float: left;
+}
+
+.guess_hd span {
+	float: right;
+	font-size: 14px;
+	color: #333333;
+	cursor: pointer;
+}
+
+/* 添加换一批的图标 */
+.guess_hd span::after {
+	content: "\e984";
+	font-family: 'icomoon';
+	padding: 0 16px 0 8px;
+	font-size: 12px;
+	color: #333333;
+	cursor: pointer;
+}
+
+/* 列表 */
+.guess_bd {
+	height: 230px;
+	border: 1px solid #ededed;
+}
+
+.guess_bd ul {
+	width: 1205px;
+}
+
+.guess_bd li {
+	float: left;
+}
+
+/* 列表中间的分隔线 */
+.guess_bd ul li:nth-child(n+2)::after {
+	content: "";
+	display: block;
+	height: 62px;
+	border-left: 1px solid #ededed;
+	margin-top: -78px;
+}
+
+.guess_bd a {
+	display: block;
+	padding: 14px 34px;
+	width: 132px;
+	height: 202px;
+	/* background-color: pink; */
+
+}
+
+.guess_bd li img {
+	display: block;
+	width: 126px;
+	margin: 0 auto;
+
+}
+
+.guess_bd .sp_name {
+	margin: 10px auto 5px auto;
+	width: 126px;
+	font-size: 12px;
+	color: #666666;
+	text-align: center;
+	line-height: 20px;
+}
+
+.guess_bd .price {
+	margin: 0 auto;
+	width: 126px;
+	color: #df3033;
+	font-size: 18px;
+	font-weight: 700;
+}
+
+.guess_bd .price::before {
+	content: "￥";
+	font-size: 14px;
+	color: #df3033;
+
+}
+
+/* 猜你喜欢 end */
+
+/* 传智播客 有趣区 start */
+.interest {}
+
+.interest_bd {
+	/* overflow: hidden; */
+	margin-top: 5px;
+	height: 404px;
+	/* background-color: pink; */
+	border: 1px solid #EDEDED;
+}
+
+.interest_1 {
+	float: left;
+	overflow: hidden;
+	width: 404px;
+}
+
+.interest_bd .interest_2 {
+	position: relative;
+	float: left;
+	width: 226px;
+	height: 404px;
+	border-right: 1px solid #EDEDED;
+}
+
+.i2-title {
+	height: 38px;
+	color: #333333;
+	font-size: 14px;
+	text-align: center;
+	line-height: 38px;
+	font-weight: 700;
+}
+
+.i2-title::after {
+	content: "";
+	position: absolute;
+	top: 38px;
+	left: 16px;
+	display: block;
+	width: 192px;
+	border-bottom: 1px dashed #EDEDED;
+}
+
+.i2-content1 {
+	height: 206px;
+	border-bottom: 1px solid #EDEDED;
+}
+
+.i2-content2 {
+	/* overflow: hidden; */
+	height: 158px;
+}
+
+.i2-content2 img {
+	/* overflow: hidden; */
+	width: 226px;
+}
+
+.interest_bd .interest_3 {
+	position: relative;
+	float: left;
+	width: 406px;
+	height: 404px;
+	background-color: #f7f7f7;
+}
+
+.i3-title::after {
+	content: "";
+	position: absolute;
+	top: 38px;
+	left: 16px;
+	display: block;
+	width: 366px;
+	border-bottom: 1px dashed #EDEDED;
+}
+
+.i3-content1 {
+	height: 206px;
+	border-bottom: 1px solid #EDEDED;
+}
+
+.i3-content2 {
+	height: 159px;
+}
+
+.i3-content2 img {
+	float: left;
+	width: 203px;
+}
+
+.interest_bd .interest_4 {
+	overflow: hidden;
+	float: left;
+	width: 160px;
+}
+
+.interest_4 img {
+	width: 160px;
+}
+
+/* 传智播客 有趣区 end */
+
+
+/* 家用电器区 start */
+/* 头部 */
+
+.floor_1_hd h5 {
+	float: left;
+}
+
+.floor_1_hd ul {
+	float: right;
+	height: 24px;
+	margin-right: 12px;
+}
+
+.floor_1_hd li {
+	position: relative;
+	float: left;
+	padding: 0 12px;
+	line-height: 24px;
+}
+
+.floor_1_hd a::after {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 6px;
+	right: 0;
+	height: 14px;
+	border-left: 1px solid #999999;
+}
+
+.floor_1_hd ul li:nth-child(1) a{
+	color: #c81623;
+}
+
+.floor_1_hd ul li:last-child a::after{
+	content: "";
+	height: 0;
+}
+
+.floor_1_hd li a {
+	color: #666666;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+/* 内容区 */
+.floor_1_bd {
+	margin-top: 5px;
+	height: 360px;
+	border-top:3px solid #c81623;
+}
+
+/* 第一部分 */
+.floor_1_bd_1{
+	float: left;
+	width: 210px;
+	background-color: #f9f9f9;
+}
+
+.floor_1_bd_1 ul {
+	height: 98px;
+	/* padding: 0 14px; */
+}
+.floor_1_bd_1 li{
+	float: left;
+}
+
+.floor_1_bd_1 li a{
+	display: block;
+	margin-left: 14px;
+	width: 86px;
+	height: 32px;
+	color: #666666;
+	font-size: 12px;
+	border-bottom:1px solid #ededed;
+	text-align: center;
+	line-height: 32px;
+	cursor: pointer;
+}
+.floor_1_bd_1 img{
+	display: block;
+	height: 262px;
+	width: 210px;
+}
+
+/* 第二部分 */
+.floor_1_bd_2{
+	overflow: hidden;
+	float: left;
+	width: 329px;
+	height: 360px;
+}
+.floor_1_bd_2 img{
+	width: 330px;
+	height: 360px;
+}
+
+
+/* 第三部分 */
+.floor_1_bd_3{
+	overflow: hidden;
+	float: left;
+	width: 220px;
+	height: 359px;
+	border-bottom: 1px solid #EDEDED;
+	border-right: 1px solid #EDEDED;
+}
+
+.floor_1_bd_3 .img_1{
+	float: left;
+	width: 220px;
+	height: 180px;
+	border-bottom: 1px solid #EDEDED;
+}
+
+.floor_1_bd_3 .img_2{
+	float: left;
+	width: 220px;
+	height: 180px;
+}
+
+/* 第四部分 */
+.floor_1_bd_4{
+	overflow: hidden;
+	float: left;
+	width: 222px;
+	height: 359px;
+	border-bottom: 1px solid #ededed;
+	border-right: 1px solid #ededed;
+}
+.floor_1_bd_4 img{
+	width: 222px;
+	height: 359px;
+}
+/* 第五部分 */
+.floor_1_bd_5{
+	overflow: hidden;
+	float: left;
+	width: 216px;
+	height: 360px;
+	border-bottom: 1px solid #EDEDED;
+}
+.floor_1_bd_5 .img_1{
+	float: left;
+	width: 216px;
+	height: 180px;
+	border-bottom: 1px solid #EDEDED;
+}
+.floor_1_bd_5 .img_2{
+	float: left;
+	width: 214px;
+	height: 180px;
+	border-right: 1px solid #EDEDED;
+}
+/* 家用电器区 end */

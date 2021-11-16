@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>新增input标签</title>
+		<style type="text/css">
+		
+			li {
+				list-style: none;
+				margin-top: 10px;
+			}
+			form span{
+				display: inline-block;
+				width: 120px;
+				text-align: center;
+			}
+			form input{
+				width: 220px;	
+				height: 24px;
+			}
+			form .btn1 {
+				margin-top: 20px;
+				width: 58px;
+				height: 38px;
+				text-align: center;
+				background-color: #4169E1;
+				color: #FFFFFF;
+				margin-left: 14px;
+			}
+			
+			form .btn2 {
+				margin-top: 20px;
+				width: 58px;
+				height: 38px;
+				text-align: center;
+				background-color: #E6E6FA;
+				color: #666;
+				margin-left: 14px;
+			}
+			.btn{
+				margin-top: 40px;
+				margin-left: 120px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<form action="">
+			<li><span>文本框</span><input type="text" name="text1" autofocus="autofocus" autocomplete="on"></li>
+			<li><span>URL</span><input type="url"></li>
+			<li><span>日期类型</span><input type="date"></li>
+			<li><span>时间类型</span><input type="time"></li>
+			<li><span>月类型</span><input type="month"></li>
+			<li><span>周类型</span><input type="week"></li>
+			<li><span>数字类型</span><input type="number"></li>
+			<li><span>手机号码</span><input type="tel" required="required" placeholder="请输入手机号"></li>
+			<li><span>搜索框</span><input type="search"></li>
+			<li><span>颜色选择表单</span><input type="color"></li>
+			<li><span>颜色选择表单</span><input type="file" multiple="multiple"></li>
+			
+			<div class="btn">
+				<input type="submit"  class="btn1" value="提交">
+				<input type="reset" class="btn2" value="重置">
+			</div>
+		</form>
+
+	</body>
+</html>

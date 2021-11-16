@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 一父盒子宽度400px,高度400px，内嵌100*100的子盒子，现要求将子盒子，在父盒子的容器内，上下左右居中
+    要求：必须使用flex实现，不能使用cs3或者定位 -->
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .father {
+            display: flex;
+            margin: 10px auto;
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .son {
+            width: 100px;
+            height: 100px;
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+</body>
+
+</html>

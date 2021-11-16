@@ -1,0 +1,4 @@
+git->push前去除代理
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+

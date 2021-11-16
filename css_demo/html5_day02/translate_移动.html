@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>translate-移动</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			div {
+				width: 200px;
+				height: 200px;
+				background-color: pink;
+				transition:all 0.4s;
+			}
+
+			div:hover {
+				/* 向x轴水平移动1000px */
+				/* transform:translate(1000px,0); */
+
+				/* 向有轴移动400px */
+				/* transform: translate(0, 400px); */
+
+				/* 向x,y轴移动500px */
+				/* transform: translate(500px,500px); */
+				
+				transform:translateX(1000px) translateY(500px);
+/* 				transform: translateY(500px); */
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>

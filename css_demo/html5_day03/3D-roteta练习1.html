@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>3D-练习1</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				perspective: 200px;
+			}
+			div{
+				margin: 100px auto;
+				width: 200px;
+				height: 600px;
+				border: 2px solid red;
+				transition: all 0.4s;
+				transform-style: preserve-3d;
+			}
+			div img{
+				width: 150px;
+				transform: translate3d(10px,10px,10px) 
+			}
+			div img:nth-child(1):hover{
+				transform: rotate(-45deg);
+			}
+			div img:nth-child(2):hover{
+				transform: rotateY(-45deg);
+			}
+			div img:nth-child(3):hover{
+				transform: rotateZ(-45deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<img src="images/pic.jpg" alt="">
+			<img src="images/pic.jpg" alt="">
+			<img src="images/pic.jpg" alt="">
+		</div>
+	</body>
+</html>

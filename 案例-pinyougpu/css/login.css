@@ -1,0 +1,199 @@
+/* 头部 开始 */
+.login_hd {
+	padding: 8px 0;
+	height: 68px;
+}
+
+.login_hd img {
+	width: 180px;
+	height: 68px;
+}
+
+/* 头部 结束 */
+
+/* 登录主体开始 */
+.login_box {
+	height: 486px;
+	background-color: #7e00ff;
+}
+
+/* 登录背景部分 */
+div .login_bg {
+	position: relative;
+	display: block;
+	width: 1200px;
+	height: 486px;
+	background: url(../upload/loginbg.png) no-repeat center center;
+}
+
+/* 登录信息 */
+.login_info {
+	position: absolute;
+	top: 62px;
+	left: 705px;
+	padding: 0 37px;
+	width: 307px;
+	height: 362px;
+	background-color: #FFFFFF;
+}
+
+/* 登录标题 */
+.login_title {
+	width: 304px;
+	height: 62px;
+}
+
+.login_title li {
+	float: left;
+}
+
+.login_title li:first-child::after {
+	content: "|";
+	font-size: 18px;
+	color: #EDEDED;
+	line-height: 62px;
+}
+
+.login_title li:last-child a {
+	color: #c81623;
+}
+
+.login_title li a {
+	float: left;
+	width: 150px;
+	color: #666666;
+	font-size: 18px;
+	text-align: center;
+	line-height: 62px;
+}
+
+/* 提示信息 */
+.tips {
+	width: 301px;
+	height: 24px;
+	font-size: 12px;
+	color: #666666;
+	background-color: #fffdee;
+	border: 1px solid #f5eecf;
+	line-height: 24px;
+	text-indent: 1em;
+}
+
+/* 登录表单 */
+.login_form {
+	margin-top: 12px;
+	width: 304px;
+	height: 188px;
+	/* background-color: pink; */
+}
+
+.login_form li {
+	height: 34px;
+	width: 301px;
+	margin-bottom: 16px;
+	border: 1px solid #bbbaba;
+	;
+}
+
+.username,
+.password {
+	float: left;
+	width: 260px;
+	height: 34px;
+	color: #b2b2b2;
+	font-size: 14px;
+	font-weight: 300;
+	text-indent: 1em;
+	line-height: 34px;
+	border: none;
+}
+
+.user_icon,
+.pwd_icon {
+	float: left;
+	font-family: 'icomoon';
+	width: 37px;
+	height: 34px;
+	background-color: #cfcdcd;
+	color: #FFFFFF;
+	text-align: center;
+	line-height: 34px;
+}
+
+.login_form li:nth-child(-n+2):hover {
+	border: 1px solid #3aa2e4;
+}
+
+/* 自动登录和忘记密码 */
+.login_form .login_check {
+	position: relative;
+	line-height: 34px;
+	border: none;
+}
+
+.login_check input {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	margin-top: -7px;
+	float: left;
+	border: 1px solid #b2b2b2;
+}
+
+.login_check span {
+	float: left;
+	margin-left: 16px;
+	font-size: 12px;
+	color: #b2b2b2;
+}
+
+.login_check a {
+	float: right;
+	font-size: 12px;
+	color: #333333;
+}
+
+/* 登录按钮 */
+.login_form .btn {
+	border: none;
+}
+
+.btn button {
+	width: 304px;
+	height: 41px;
+	color: #FFFFFF;
+	font-size: 16px;
+	background-color: #c81623;
+	text-align: center;
+	line-height: 41px;
+	letter-spacing: 24px;
+	cursor: pointer;
+}
+
+/* 其他方式登录和立即注册 */
+.login_form .other_login {
+	border: none;
+	line-height: 34px;
+}
+
+.other_login div a {
+	float: left;
+	margin: 5px 18px 0 0;
+	display: block;
+	width: 34px;
+	height: 34px;
+	background-color: pink;
+}
+
+.other_login div a img {
+	width: 34px;
+	height: 34px;
+}
+
+.register {
+	float: right;
+	font-size: 14px;
+	color: #1474af;
+}
+
+/* 登录主体结束 */

@@ -1,0 +1,384 @@
+/* 下载APP 开始 */
+.down_app {
+	position: relative;
+	width: 100%;
+	height: 45px;
+	color: #fff;
+	/* background-color: pink; */
+}
+
+.down_app li {
+	float: left;
+	height: 45px;
+	font-size: 14px;
+	line-height: 45px;
+	text-align: center;
+
+}
+
+.down_app ul li:nth-child(1) {
+	width: 8%;
+	background: #333333 url(../images/close.png) no-repeat center center;
+	background-size: 16px 16px;
+
+}
+
+.down_app ul li:nth-child(2) {
+	width: 15%;
+	background: #333333 url(../images/logo.png) no-repeat center center;
+	background-size: 32px auto;
+}
+
+.down_app ul li:nth-child(3) {
+	width: 50%;
+	background-color: #333333;
+}
+
+.down_app ul li:nth-child(4) {
+	width: 27%;
+	background-color: #F73615;
+}
+
+/* 下载APP 结束 */
+
+/* 搜索 开始 */
+.search {
+	position: fixed;
+	width: 100%;
+	height: 44px;
+	background-color: #FF454D;
+	z-index: 99;
+}
+
+.search div:nth-child(1) {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 10%;
+	height: 44px;
+	background: url(../images/s-btn.png) no-repeat center center;
+	background-size: 20px auto;
+}
+
+.search div:nth-child(2) {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%, 0);
+	width: 77%;
+	height: 44px;
+}
+
+.search div:nth-child(3) {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 13%;
+	height: 44px;
+	text-align: center;
+	line-height: 44px;
+}
+
+.search div:nth-child(3) a {
+	color: #fff;
+	font-size: 14px;
+}
+
+/* 搜索框 */
+.search_box ul {
+	position: absolute;
+	box-sizing: border-box;
+	padding: 0 14px;
+	top: 50%;
+	left: 0;
+	margin-top: -15px;
+	width: 100%;
+	height: 30px;
+	background-color: #fff;
+	border-radius: 15px;
+}
+
+.search_box ul li {
+	float: left;
+}
+
+.search_box ul li:nth-child(1) {
+	width: 20px;
+	height: 30px;
+	background-color: #0000FF;
+	background: url(../images/jd.png) no-repeat center center;
+	background-size: 20px auto;
+}
+
+.search_box ul li:nth-child(1)::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 40px;
+	margin-top: -7px;
+	width: 1px;
+	height: 14px;
+	background-color: #ccc;
+}
+
+.search_box ul li:nth-child(2) {
+	position: absolute;
+	top: 50%;
+	left: 46px;
+	margin-top: -7px;
+	width: 20px;
+	height: 30px;
+	background: url(../images/jd-sprites.png) no-repeat -82px 0;
+	background-size: 200px auto;
+}
+
+.search_box ul li:nth-child(3) {
+	position: absolute;
+	top: 50%;
+	left: 70px;
+	margin-top: -9px;
+	width: 200px;
+	height: 30px;
+	font-size: 12px;
+	color: #999;
+}
+
+/* 搜索 结束 */
+
+/* banner 开始 */
+.banner {
+	position: relative;
+	margin-top: 44px;
+	width: 100%;
+	height: 153px;
+}
+
+.banner_bg {
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: block;
+	width: 100%;
+	height: 153px;
+}
+
+.banner_list {
+	position: absolute;
+	left: 50%;
+	top: 0;
+	transform: translate(-50%, 0);
+	overflow: hidden;
+	width: 90%;
+	height: 153px;
+	border-radius: 8px;
+}
+
+.banner_list img {
+	overflow: hidden;
+	width: 100%;
+}
+
+/* banner 结束 */
+
+/* 导航栏开始 */
+.nav_list {
+	width: 100%;
+	height: 178px;
+}
+
+.nav_list li {
+	width: 20%;
+	float: left;
+	height: 80px;
+	text-align: center;
+}
+
+.nav_list a {
+	width: 100%;
+	color: #666;
+}
+
+.nav_list a img {
+	width: 44px;
+}
+
+/* 导航栏结束 */
+
+/* 秒杀开始 */
+.skill {
+	width: 100%;
+	height: 148px;
+	background-color: #fff;
+	border-radius: 4px;
+}
+
+.skill_title {
+	position: relative;
+	width: 100%;
+	height: 38px;
+	background: url(../images/skill-bg.png) no-repeat center center;
+	background-size: 100% auto;
+	line-height: 38px;
+}
+
+.skill_title h5 {
+	float: left;
+	margin-left: 5px;
+	color: #333;
+	font-size: 16px;
+}
+
+.skill_time01 {
+	float: left;
+	margin-top: -5px;
+	margin-left: 8px;
+	font-size: 14px;
+	color: #FF3232;
+}
+	
+.skill_title .skill_time_img{
+	float: left;
+	display: block;
+	margin-right: 5px;
+	transform: translate(-1px,11px);
+	width: 18px;
+	vertical-align: top;
+}
+
+.skill_time02 {
+	float: left;
+	color: #FD4030;
+}
+
+.skill_time02 div:nth-child(2n+1){
+	float: left;
+	margin-top: 7px;
+	margin-right: 10px;
+	width: 16px;
+	height: 20px;
+	font-size: 12px;
+	color: #fff;
+	background-color: #FD4030;
+	line-height: 20px;
+	text-align: center;
+	border-radius: 6px;
+}
+.skill_time02 div:nth-child(2n){
+	float: left;
+	transform: translate(-5px,6px);
+	width: 2px;
+	height: 20px;
+	font-size: 12px;
+	color: #FD4030;
+	line-height: 20px;
+}	
+
+
+
+.more {
+	float: right;
+	font-size: 12px;
+	color: #F32C2C;
+}
+.more::after{
+	content: "";
+	float: right;
+	display: block;
+	margin: 12px 5px 0 5px;
+	width: 12px;
+	height: 12px;
+	background: url(../images/skill-arr.png) no-repeat;
+	background-size: 12px auto;
+}
+/* 商品列表 */
+.skill_list{
+	margin-top: 12px;
+	width: 100%;
+	height: 80px;
+}
+.skill_list ul{
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+}
+
+.skill .skill_list ul li{
+	float: left;
+	width: 16.66%;
+}
+.skill_list a{
+	display: block;
+	width: 100%;
+	height: 80px;
+	text-align: center;
+}
+.skill_list a img{
+	width: 50px;
+	height: 50px;
+}
+.skill_list p{
+	font-size: 16px;
+	color: #f2270c;
+}
+.skill_list p::before{
+	content: "￥";
+	margin-right: -3px;
+	font-size: 12px;
+	color: #f2270c;
+}
+/* 秒杀结束 */
+
+/* 单个商品列表 开始 */
+.sigle_box{
+	width: 94%;
+	margin: 14px auto;
+}
+.sigle_box ul{
+	width: 102%;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content:flex-start;
+	align-content: flex-start;
+}
+.sigle_box li{
+	position: relative;
+	height: 132px;
+	margin-right: 2px;
+}
+.sigle_box ul li:nth-child(4n){
+	margin-right:0;
+}
+
+.sigle_box li a{
+	flex: 1;
+	/* width: 102%; */
+	height: 132px;
+	text-align: center;
+}
+.sigle_box li .img_01{
+	width: 88px;
+	/* height: 132px; */
+	
+}
+.img_02{
+	position: absolute;
+	top:12px;
+	left: 11px;
+	width: 72px;
+}
+.text_01{
+	position: absolute;
+	top:90px;
+	left: 14px;
+	color: #fff;
+	font-size: 14px;
+}
+.text_02{
+	position: absolute;
+	top:106px;
+	left: 18px;
+	color: #fff;
+	font-size: 12px;
+}
+
+/* 单个商品列表 结束 */

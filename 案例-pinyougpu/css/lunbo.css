@@ -1,0 +1,76 @@
+/* banner图上的 左右箭头 开始 */
+.slider_banner .arr-l,
+.slider_banner .arr-r {
+	font-family: 'icomoon';
+	display: block;
+	width: 21px;
+	height: 31px;
+	color: rgba(255, 255, 255, .8);
+	font-size: 20px;
+	background-color: rgba(0, 0, 0, .15);
+	text-align: center;
+	line-height: 35px;
+	cursor: pointer;
+}
+
+.arr-l {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	margin-top: -14px;
+	padding-left: 3px;
+	border-radius: 0 14px 14px 0;
+
+}
+
+.arr-r {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	margin-top: -14px;
+	padding-right: 3px;
+	border-radius: 14px 0 0 14px;
+}
+
+.arr-l:hover,
+.arr-r:hover {
+	background-color: rgba(0, 0, 0, .8);
+}
+
+/* banner图上的 左右箭头 end */
+
+
+/* 底部小圆点 开始*/
+.huadong {
+	position: absolute;
+	bottom: 20px;
+	left: 30px;
+	width: 113px;
+	height: 15px;
+}
+
+.huadong li {
+	float: left;
+	width: 15px;
+	height: 15px;
+}
+
+.huadong li a {
+	display: block;
+	width: 8px;
+	height: 8px;
+	background: rgba(255, 255, 255, .4);
+	/* background-color: #FFFFFF; */
+	border-radius: 50%;
+	transition: all 0.1s;
+}
+
+.huadong li a:hover {
+	width: 4px;
+	height: 4px;
+	background-color: #FFFFFF;
+	border: 2px solid rgba(0, 0, 0, .5);
+	border-radius: 50%;
+	transform: scale(1.7);
+}
+/* 底部小圆点 结束*/

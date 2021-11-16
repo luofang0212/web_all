@@ -1,0 +1,48 @@
+
+* {
+	margin: 0;
+	padding: 0;
+}
+.w{
+	width: 1200px;
+	margin: 0 auto;
+}
+
+ul, ol {
+	list-style: none;
+}
+
+input, button {
+	outline: none;
+	border: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+
+.clearfix::before,
+.clearfix::after {
+	content: "";
+	height: 0;
+	line-height: 0;
+	display: block;
+	visibility: hidden;
+}
+
+.clearfix::after {
+	clear: both;
+}
+
+/* 声明icommoon字体 */
+@font-face {
+	font-family: 'icomoon';
+	src: url('../fonts/icomoon.eot?7kkyc2');
+	src: url('../fonts/icomoon.eot?7kkyc2#iefix') format('embedded-opentype'),
+		url('../fonts/icomoon.ttf?7kkyc2') format('truetype'),
+		url('../fonts/icomoon.woff?7kkyc2') format('woff'),
+		url('../fonts/icomoon.svg?7kkyc2#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
