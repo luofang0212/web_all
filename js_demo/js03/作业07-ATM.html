@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // - 里面现存有100 块钱。
+
+        // - 如果存钱，就用输入钱数加上先存的钱数, 之后弹出显示余额提示框
+
+        // - 如果取钱，就减去取的钱数，之后弹出显示余额提示框
+
+        // - 如果显示余额，就输出余额
+
+        // - 如果退出，弹出退出信息提示框
+
+        var money = 100;
+        while (1 == 1) {
+            var num = prompt('请输入相应编号进行操作：\n 1、存钱\n 2、取钱 \n 3、显示余额 \n 4、退出')
+            if (num == '1') {
+                var save_money = prompt('请输入存钱的金额：');
+                money = money + parseFloat(save_money);
+                alert('你本次存款：' + save_money + ', 总余额为：' + money);
+                continue;
+            } else if (num == '2') {
+                var get_money = prompt('请输入取钱的金额：');
+                get_money = parseFloat(get_money)
+                if (get_money > money) {
+                    alert('你本次取款：' + get_money + ', 总余额为：' + money + '\n取款金额大于总存款，不能取款哦！');
+                    continue;
+                } else {
+                    money = money - get_money;
+                    alert('你本次取款：' + get_money + ', 总余额为：' + money);
+                    continue;
+                }
+
+            } else if (num == '3') {
+                alert('你的余额为：' + money);
+                continue
+            } else if (num == '4') {
+                break;
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
