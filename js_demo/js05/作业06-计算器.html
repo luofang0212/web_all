@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		<script>
+			// - 用户在弹出的输入框中选择要做的运算
+			// - 用户选择后弹出两个输入框，让用户输入数据
+			// - 根据用户选择的操作和输入的数据，计算出最后结果并弹出提示框显示结果
+
+			function getCalculate() {
+				while (1 == 1) {
+					var num = prompt('请选择你要的计算方式：\n1、加法计算\n 2、减法计算\n 3、乘法计算\n 4、除法运算\n 5、退出');
+					if (num == '1') {
+						result = add();
+						alert(result)
+					} else if (num == '2') {
+						result = sub();
+						alert(result)
+					} else if (num == '3') {
+						result = mul()
+						alert(result);
+					} else if (num == '4') {
+						result = divide();
+						alert(result)
+					} else if (num == '5') {
+						break;
+					}
+				}
+				return;
+			}
+			getCalculate();
+
+			function add() {
+				var num1 = prompt('请输入第1个数：');
+				var num2 = prompt('请输入第2个数：');
+				result = parseFloat(num1) + parseFloat(num2);
+				return result;
+			}
+
+			function sub() {
+				var num1 = prompt('请输入第1个数：');
+				var num2 = prompt('请输入第2个数：');
+				result = parseFloat(num1) - parseFloat(num2);
+				return result;
+			}
+
+			function mul() {
+				var num1 = prompt('请输入第1个数：');
+				var num2 = prompt('请输入第2个数：');
+				result = parseFloat(num1) * parseFloat(num2);
+				return result;
+			}
+
+			function divide() {
+				var num1 = prompt('请输入第1个数：');
+				var num2 = prompt('请输入第2个数：');
+				result = parseFloat(num1) / parseFloat(num2);
+				return result;
+			}
+		</script>
+	</head>
+
+	<body>
+
+	</body>
+
+</html>

@@ -6,9 +6,9 @@
 body{
     margin: 0 auto;
     min-width: 320px;
-    min-width: 1024px;
+    max-width: 750px;
     font-size: 14px;
-    background-color: #ededed;
+    background-color: #FFF;
 }
 
 a{
@@ -18,6 +18,13 @@ a{
 li{
     list-style: none;
 }
+input{
+    outline: none;
+}
+img{
+    border-style: none;
+    vertical-align: middle;
+}
 
 /* 我们关心的尺寸有 320px、360px、375px、384px、400px、414px、424px、480px、540px、720px、750px、1024px  */
 /* 划分的份数我们定为 15等份 */
@@ -25,7 +32,7 @@ li{
 html{
     font-size: 50px;
 }
-@num: 15;
+@num: 15; //划分的份数我们定为 15等份
 @media screen and (min-width: 320px){
     html{
         font-size: (320px / @num);
@@ -89,11 +96,5 @@ html{
 @media screen and (min-width: 750px){
     html{
         font-size: (750px / @num);
-    }
-}
-
-@media screen and (min-width: 1024px){
-    html{
-        font-size: (1024px / @num);
     }
 }

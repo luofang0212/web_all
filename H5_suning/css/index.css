@@ -1,3 +1,236 @@
-div {
-  font-size: 2rem;
+* {
+    margin: 0;
+    padding: 0;
 }
+
+body {
+    margin: 0 auto;
+    min-width: 320px;
+    max-width: 750px;
+    font-size: 14px;
+    background-color: #fff;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+input {
+    outline: none;
+}
+
+img {
+    border-style: none;
+    vertical-align: middle;
+}
+
+
+/* 我们关心的尺寸有 320px、360px、375px、384px、400px、414px、424px、480px、540px、720px、750px、1024px  */
+
+
+/* 划分的份数我们定为 15等份 */
+
+
+/* 因为我们pc端也可以打开我们苏宁移动端首页，我们默认html字体大小为 50px，注意这句话写到最上面 */
+
+html {
+    font-size: 50px;
+}
+
+@media screen and (min-width: 320px) {
+    html {
+        font-size: 21.33333333px;
+    }
+}
+
+@media screen and (min-width: 360px) {
+    html {
+        font-size: 24px;
+    }
+}
+
+@media screen and (min-width: 375px) {
+    html {
+        font-size: 25px;
+    }
+}
+
+@media screen and (min-width: 384px) {
+    html {
+        font-size: 25.6px;
+    }
+}
+
+@media screen and (min-width: 400px) {
+    html {
+        font-size: 26.66666667px;
+    }
+}
+
+@media screen and (min-width: 414px) {
+    html {
+        font-size: 27.6px;
+    }
+}
+
+@media screen and (min-width: 424px) {
+    html {
+        font-size: 28.26666667px;
+    }
+}
+
+@media screen and (min-width: 480px) {
+    html {
+        font-size: 32px;
+    }
+}
+
+@media screen and (min-width: 540px) {
+    html {
+        font-size: 36px;
+    }
+}
+
+@media screen and (min-width: 720px) {
+    html {
+        font-size: 48px;
+    }
+}
+
+@media screen and (min-width: 750px) {
+    html {
+        font-size: 50px;
+    }
+}
+
+
+/* 头部 开始 */
+
+.search-content {
+    display: flex;
+    width: 15rem;
+    height: 1.76rem;
+    background-color: #FFC001;
+}
+
+.search-content .classify {
+    margin: 0.22rem 0.5rem 0.14rem 0.48rem;
+    width: 0.88rem;
+    height: 1.4rem;
+    background: url(../images/classify.png) no-repeat;
+    background-size: 0.88rem 1.4rem;
+}
+
+.search-content .search {
+    flex: 1;
+    height: 1.32rem;
+}
+
+.search-content .search input {
+    padding: 0 1.1rem;
+    margin: 0.2rem 0 0 0;
+    width: 100%;
+    height: 1.32rem;
+    color: #757575;
+    font-size: 0.5rem;
+    background-color: #FFF2CC;
+    border: 0;
+    border-radius: 33rem;
+}
+
+.search-content .login {
+    margin: 0.2rem;
+    width: 1.5rem;
+    height: 1.4rem;
+    font-size: 0.5rem;
+    color: #fff;
+    text-align: center;
+    line-height: 1.4rem;
+}
+
+
+/* 头部 结束 */
+
+
+/* banner 开始 */
+
+.banner {
+    width: 15rem;
+    height: 7.36rem;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* banner 结束 */
+
+
+/*  ad部分 开始 */
+
+.ad {
+    display: flex;
+    width: 15rem;
+    height: 4rem;
+}
+
+.ad a {
+    flex: 1;
+    width: 15rem / 3;
+}
+
+.ad a img {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* ad部分 结束 */
+
+
+/* 导航栏部分 开始 */
+
+.nav_items {
+    margin-top: 0.28rem;
+    width: 15rem;
+    flex-wrap: wrap;
+}
+
+.nav_items ul {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.nav_items li {
+    margin-bottom: 0.2rem;
+    width: 20%;
+}
+
+.nav_items li a {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 0.5rem;
+    color: #333;
+    text-align: center;
+}
+
+.nav_items li a::before {
+    content: "";
+    display: block;
+    margin: 0 auto 0.2rem;
+    width: 1.64rem;
+    height: 1.64rem;
+    background: url(../upload/nav1.png) no-repeat;
+    background-size: 1.64rem 1.64rem;
+}
+
+
+/* 导航栏部分 结束 */
