@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+	<script type="text/javascript">
+		// 题目描述：制作一个函数，getDayNum( 年月日日期 )，可以返回指定日期是当前年的第几天
+		
+		// ​	例：  getDayNum( “2019-1-2”)    返回值为：2
+		
+		function getDayNum(date){
+			
+		}
+		res = getDayNum('2019-1-2');
+		console.log(res);
+		
+		// 判断是平年还是闰年
+		function isYunYear(year){
+			var flag = false; 
+			//满足条件则为闰年  366天，平年365天
+			if(year % 4 == 0 && year % 100 != 0 || year % 400 == 0){
+				flag = true;
+			}
+			return flag;
+		}
+		res = isYunYear('2000')
+		console.log(res);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
