@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        html {
+            font-size: 50px;
+        }
+        /* 当宽度小于539时 */
+        
+        @media screen and (max-width: 539px) {
+            .box {
+                background-color: pink;
+            }
+        }
+        
+        @media screen and (max-width: 540px) and (min-width: 969px) {
+            .box {
+                background-color: purple;
+            }
+        }
+        
+        @media screen and (max-width: 970px) {
+            .box {
+                background-color: blue;
+            }
+        }
+        
+        .box {
+            margin: 0 auto;
+            height: 1rem;
+            width: 100%;
+            font-size: 14px;
+            line-height: 1rem;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        我是一个小小的鸟，怎么飞都飞不高 </div>
+
+</body>
+
+</html>
