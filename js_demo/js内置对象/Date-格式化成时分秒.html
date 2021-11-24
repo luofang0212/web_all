@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title></title>
+		<script type="text/javascript">
+			// 写一个函数，格式化日期对象，成为 HH:mm:ss 的形式 比如 00:10:45
+			function formTime(){
+				var time = new Date();
+				var hour = time.getHours();
+				hour = hour < 10 ? '0' + hour : hour; //格式时间，补0
+				
+				var minute = time.getMinutes();
+				minute = minute < 10 ? '0' + minute : minute;
+				
+				var second = time.getSeconds();
+				second = second < 10 ? '0' + second : second;
+				
+				var times = hour + ':' + minute + ':' + second;
+				return times;
+			}
+			res = formTime();
+			console.log(res)
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

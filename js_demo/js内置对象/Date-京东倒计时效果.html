@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>倒计时效果</title>
+		<script type="text/javascript">
+			// 倒计时
+			function times(endTime) {
+				var now = +new Date();
+				var endTime = +new Date(endTime);
+				// 获取总秒数
+				var sumTimes = (endTime - now) / 1000;
+				d = parseInt(sumTimes / 60 / 60 / 24);
+				
+				h = parseInt(sumTimes / 60 / 60 % 24);
+				h = h < 10 ? '0' + h : h;
+				
+				m = parseInt(sumTimes / 60 % 60);
+				m = m < 10 ? '0' + m : m;
+				
+				s = parseInt(sumTimes % 60);
+				s = s < 10 ? '0' + s : s;
+				
+				var times = h + ':' + m + ':' + s;
+				var timer = document.getElementsByClassName('times');
+				var hour = document.getElementsByClassName('hour');
+				var minute = document.getElementsByClassName('minute');
+				var scend = document.getElementsByClassName('scend');
+				
+			}
+			times('2021-11-24 14:00:00');
+			
+			
+			
+		</script>
+		
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			a {
+				text-decoration: none;
+			}
+
+			.djs {
+				margin: 0 auto;
+				width: 190px;
+				height: 260px;
+				background-color: pink;
+			}
+
+			.djs a {
+				position: relative;
+				overflow: hidden;
+				display: block;
+				width: 100%;
+				height: 100%;
+				background: url(img/djs.png) no-repeat;
+				text-align: center;
+			}
+
+			.djs a h5 {
+				margin: 31px 0 0;
+				color: #fff;
+				font-size: 30px;
+			}
+
+			.djs a p {
+				margin: 90px 0 0;
+				color: #fff;
+				font-size: 14px;
+			}
+
+			.djs a p::before {
+				content: "12:00";
+				margin-right: 5px;
+				font-size: 18px;
+				font-weight: 700;
+			}
+
+			a .times {
+				position: absolute;
+				left: 16%;
+				margin: 20px 0 0;
+			}
+
+			.times span {
+				display: block;
+				float: left;
+				margin: 0 auto;
+				margin-left: 5px;
+				color: #fff;
+				line-height: 30px;
+			}
+
+			.times span:nth-child(2n+1) {
+				width: 30px;
+				height: 30px;
+				background-color: #2f3430;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="djs">
+			<a href="#">
+				<h5>京东秒杀</h5>
+				<p>点场 距结束</p>
+				<div class="times">
+					<span class="hour">1</span>
+					<span>:</span>
+					<span  class="minute">2</span>
+					<span>:</span>
+					<span  class="scend">3</span>
+				</div>
+			</a>
+		</div>
+
+	</body>
+	
+</html>

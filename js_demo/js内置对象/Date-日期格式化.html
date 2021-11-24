@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+	<script type="text/javascript">
+		// 获取当前时间
+		// var nowTime = new Date();
+		// console.log(nowTime);
+		
+		//指定时间，传具体的参数就是指定日期
+		var date2 = new Date('2021-11-21');
+		console.log(date2);
+		
+		// 格式化时间
+		var nowTime = new Date();
+		console.log(nowTime);
+		// 获取年
+		var year = nowTime.getFullYear();
+		console.log(year);
+		// 获取月
+		var month = nowTime.getMonth();
+		console.log(month);
+		
+		// 获取日
+		var data = nowTime.getDate();
+		console.log(data);
+		
+		// 获取小时
+		var hours = nowTime.getHours();
+		console.log(hours);
+		
+		// 获取分
+		var minute = nowTime.getMinutes();
+		console.log(minute);
+		
+		// 获取秒
+		var second = nowTime.getSeconds();
+		console.log(second);
+		
+		// 格式化当前时间
+		var formDate = year + '-' + month + '-' + data + ' ' + hours + ':' + minute + ':' + second;
+		console.log(formDate);
+		 
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
