@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>分时显示不同图片,显示不同问候语</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			div {
+				margin: 20px auto;
+				width: 200px;
+			}
+
+			div img {
+				width: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 根据不同时间，页面显示不同图片，同时显示不同的问候语。
+	如果上午时间打开页面，显示上午好，显示上午的图片。
+	如果下午时间打开页面，显示下午好，显示下午的图片。
+	如果晚上时间打开页面，显示晚上好，显示晚上的图片。 -->
+	
+	<!-- 案例分析
+	 1、根据系统不同时间来判断，需要用到日期内置对象
+	 2、需要用到条件语句 if-else if 来判断不同的时间段，设置不同的问候语图片
+	 3、需要修改img元素里的src和alt 、title属性值
+	 -->
+		<div class="box">
+			<img src="images/s.gif" alt="上午好" title="上午好">
+		</div>
+		<script type="text/javascript">
+			// 获取元素  
+			var img = document.querySelector('img');
+			// 根据当前时间，利用Math.Date内置的日期对象 进行判断if-else if 判断 是上午、下午、晚上
+			// 改变的是里面img元素里的src 和 alt
+			
+			// 获取系统当前时间
+			var now = new Date('2021-10-20 10:00:00');
+			console.log(now);
+			// 获取小时
+			var hours = now.getHours();
+			console.log(hours);
+			if (8 <= hours && hours <= 10) {
+				console.log("早上");
+				img.src = 'images/z.gif';
+				img.alt = '上午好';
+				img.title = "上午好"
+			} else if (10 < hours && hours <= 13) {
+				console.log("中午");
+				img.src = 'images/s.gif';
+				img.alt = '中午好';
+				img.title = "中午好"
+			} else if (13 < hours && hours <= 18) {
+				console.log("下午");
+				img.src = 'images/x.gif';
+				img.alt = '下午好';
+				img.title = "下午好"
+			} else {
+				console.log("晚上好");
+				img.src = 'images/3.jpg';
+				img.alt = '晚上好';
+				img.title = "晚上好"
+			}
+		</script>
+	</body>
+</html>

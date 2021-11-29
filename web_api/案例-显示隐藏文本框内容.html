@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>案例：显示隐藏文本框内容</title>
+		<!-- 当鼠标点击文本框时，里面的默认文字隐藏，当鼠标离开文本框时，里面的文字显示 -->
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			input,
+			button {
+				outline: none;
+
+			}
+
+			input {
+				float: left;
+				width: 300px;
+				height: 28px;
+				color: #ccc;
+				border: 1px solid #ccc;
+				border-right: none;
+				text-indent: 0.5em;
+			}
+
+			button {
+				float: left;
+				width: 48px;
+				height: 30px;
+				border: 1px solid #ccc;
+				border-left: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="seach_box">
+			<form action="">
+				<input type="text" value="手机" class="search" />
+				<button type="button">搜索</button>
+			</form>
+		</div>
+
+		<script type="text/javascript">
+			// 当鼠标点击文本框时，里面的默认文字隐藏，当鼠标离开文本框时，里面的文字显示
+			// 分析
+			// 1、获取输入框元素，得到里面的文本，根据文本进行 if 判断
+			//2、通过输入框获取到焦点，清空文本
+			//3、输入框失去焦点，显示默认值
+
+			//获取元素
+			var search = document.querySelector('.search');
+			var seach_box = document.querySelector('.seach_box');
+			//绑定事件
+			// input获得焦点，清空默认值
+			var text = search.value;
+			search.onfocus = function() {
+				// 获取表单的value
+				search.style.color = '#333';
+				var text = search.value;
+				if (text === "手机") {
+					search.value = '';
+				} else {
+					text = search.value;
+				}
+			}
+			// input失去焦点，重新赋默认值 为手机
+			search.onblur = function(){
+				if(text === '手机' || text === ''){
+					search.value = '手机';
+					search.style.color = '#ccc';
+				}else{
+					text = search.value;
+				}
+			}
+		</script>
+
+	</body>
+</html>

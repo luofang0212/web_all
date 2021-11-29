@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+			
+		div,
+		input{
+			margin: 0 auto;
+			margin-bottom: 10px;
+			width: 300px;
+			height: 28px;
+			border: 1px solid #333;
+			line-height: 28px;
+			text-align: center;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div class="div1">点击 onclick</div>
+	<div  class="div2">鼠标经过触发onmouseover</div>
+	<!-- <div  class="div3">鼠标离开触发onmouseout</div> -->
+	<input class="ipt1" type="text" name="" id="" value="鼠标离开触发onmouseout" />
+	<input class="ipt2" type="text" name="" id="" value="获得鼠标焦点触发onfocus" />
+	<input class="ipt3" type="text" name="" id="" value="失去鼠标焦点触发onblur" />
+	<div  class="div6">鼠标移动触发onmousemove</div>
+	<div  class="div7">鼠标弹起触发onmouseup</div>
+	<div  class="div8">鼠标按下触发onmousedown</div>
+	
+	<script type="text/javascript">
+
+		console.log('---1、点击 onclick----')
+		// 获取元素
+		var div1 = document.querySelector('.div1');
+		//绑定事件：点击onclick 和 程序处理
+		div1.onclick = function(){
+			alert('我弹出了个你好')
+		}	
+		
+		console.log('---2、鼠标经过触发onmouseover----')
+		//获取元素
+		var div2 = document.querySelector('.div2');
+		// 绑定事件：鼠标经过 onmouseover
+		div2.onmouseover = function(){
+			console.log("我被鼠标经过了")
+		}
+		
+		console.log('---3、鼠标离开触发onmouseout----')
+		var ipt1 = document.querySelector('.ipt1');
+		// 绑定事件：鼠标离开 onmouseout
+		ipt1.onmouseout = function(){
+			console.log("鼠标离开了我")
+		}
+		
+		console.log('---4、获得鼠标焦点触发onfocus----')
+		var ipt2 = document.querySelector('.ipt2');
+		ipt2.onfocus = function(){
+			console.log('获得焦点');
+		}
+		console.log('---5、失去鼠标焦点触发onblur----')
+		var ipt3 = document.querySelector('.ipt3');
+		ipt3.onblur = function(){
+			console.log('失去焦点');
+		}
+		
+		console.log('---6、鼠标移动触发onmousemove----')
+		var div6= document.querySelector('.div6');
+		div6.onmousemove = function(){
+			console.log('我要移动了');
+		}
+		
+		console.log('---7、鼠标弹起触发onmouseup----')
+		var div7= document.querySelector('.div7');
+		div7.onmouseup = function(){
+			console.log('我弹起了');
+		}
+		console.log('---8、鼠标按下触发onmousedown----')
+		var div8= document.querySelector('.div8');
+		div8.onmousedown = function(){
+			console.log('我按下了');
+		}
+		</script>
+</body>
+</html>

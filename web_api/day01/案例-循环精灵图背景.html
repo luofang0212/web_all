@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>循环精灵图背景</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			li {
+				list-style: none;
+			}
+
+			a {
+				text-decoration: none;
+			}
+
+			.box {
+				margin: 10px auto;
+				width: 200px;
+				height: 129px;
+				border-left: 1px solid #ccc;
+				border-bottom: 1px solid #ccc;
+			}
+
+			ul {
+				width: 100%;
+
+			}
+
+			ul li {
+				float: left;
+				width: 25%;
+
+			}
+
+			ul li a {
+				position: relative;
+				display: block;
+				width: 100%;
+				height: 42px;
+				font-size: 14px;
+				color: #666;
+				line-height: 69px;
+				text-align: center;
+				border: 1px solid #ccc;
+				border-left: 0;
+				border-bottom: 0;
+				background: url(images/sprite.png) no-repeat 0 0;
+				background-size: 24px auto;
+			}
+
+			/* 			ul li a::before{
+				content: "";
+				transform: translate(50% ,2px);
+				display: block;
+				margin-top: 2px;
+				width: 24px;
+				height: 24px;
+				background: url(images/sprite.png) no-repeat 0 0;
+				background-size: 24px auto;
+			} */
+		</style>
+
+	</head>
+	<body>
+		<div class="box">
+			<ul>
+				<li><a href="javascript:;">1</a></li>
+				<li><a href="javascript:;">2</a></li>
+				<li><a href="javascript:;">3</a></li>
+				<li><a href="javascript:;">4</a></li>
+				<li><a href="javascript:;">5</a></li>
+				<li><a href="javascript:;">6</a></li>
+				<li><a href="javascript:;">7</a></li>
+				<li><a href="javascript:;">8</a></li>
+				<li><a href="javascript:;">9</a></li>
+				<li><a href="javascript:;">10</a></li>
+				<li><a href="javascript:;">11</a></li>
+				<li><a href="javascript:;">12</a></li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			/*案例分析
+				1、获取所有的li元素
+				2、替换li元素的背景图位置
+				3、算法：根据背景图的规律x轴的位置都是0，y轴是按高22 进行递增计算
+				第0个 就是0  第1个就是44  第2个就是88  以此类推：y轴就是li的索引*高44得出
+			*/
+
+			//获取元素
+			var lis = document.querySelectorAll('.box li');
+			console.log(lis);
+			for (var i = 0; i < lis.length; i++) {
+				var a = lis[i].querySelector('a');
+				var index = i * 44;
+				a.style.backgroundPosition = '0 -' + index + 'px';
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			div {
+				position: relative;
+				width: 207px;
+
+			}
+
+			div img {
+				width: 100%;
+			}
+
+			div span {
+				position: absolute;
+				top: 0;
+				right: 0;
+				display: block;
+				width: 18px;
+				height: 18px;
+				font-size: 12px;
+				color: #fff;
+				background-color: #000000;
+				opacity: 0.5;
+				line-height: 16px;
+				text-align: center;
+				cursor: default;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="ad">
+			<img src="images/ad1.gif" alt="">
+			<span class="close">x</span>
+		</div>
+		<script type="text/javascript">
+			//1、获取元素
+			var ad = document.querySelector('.ad');
+			var close = document.querySelector('.close');
+			//2、绑定事件：鼠标点击事件onclick
+			close.onclick = function(){
+				//3、 程序处理：点击关闭按钮，广告图消失
+				ad.style.display = 'none';
+			}
+			
+			
+		</script>
+	</body>
+</html>

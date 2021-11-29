@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>案例： 密码框格式提示错误信息</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			.pwd_box{
+				position: relative;
+			}
+
+			input {
+				width: 200px;
+				height: 28px;
+				color: #ccc;
+				outline: none;
+				text-indent: 0.5em;
+			}
+			.tip_box{
+				position: absolute;
+				top: 50%;
+				left: 214px;
+				transform: translateY(-50%);
+			}
+
+			.bg {
+				display: none;
+				position: absolute;
+				top: 50%;
+				left: 0;
+				transform: translateY(-50%);
+				display: block;
+				width: 15px;
+				height: 15px;
+				background-size: 15px auto;
+			}
+			
+			.bg_right{
+				display: block;
+				background: url(day01/images/right.png) no-repeat;
+			}
+			.bg_wrong{
+				display: block;
+				background: url(day01/images/wrong.png) no-repeat;
+			}
+			
+			.tips {
+				display: none;
+				width: 200px;
+				margin-left: 24px;
+				font-size: 12px;
+			}
+			.tips_right{
+				display: block;
+				color: #666;
+			}
+			.tips_wrong {
+				display: block;
+				color: #C81623;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<form action="" method="">
+				<div class="pwd_box">
+					<input type="password" class="pwd" placeholder="请输入密码" />
+					<div class="tip_box">
+						<i class="bg"></i>
+						<span class="tips">输入正确</span>
+					</div>
+					
+				</div>
+
+			</form>
+
+		</div>
+		<script type="text/javascript">
+			// 用户如果离开密码框，里面输入个数不是6~16，则提示错误信息，否则提示输入正确信息
+			/*分析
+			1、获取元素
+			2、离开密码框，判断里面的个数且密码是： 是6-16，是提示正确，替换正确的图片和文案
+			3、离开密码框，判断里面的个数 不是6-16，提示不正确  ,替换提示的图片和颜色
+			4、根据if-else if 判断密码个数
+			5、通过失去焦点进行判断
+			*/
+
+			// 获取元素
+			var pwd_box = document.querySelector('.pwd_box');
+			var pwd = document.querySelector('.pwd');
+			var bg = document.querySelector('.bg');
+			var tips = document.querySelector('.tips');
+
+			// 密码框获得焦点 字体变颜色
+			pwd.onfocus = function() {
+				pwd.style.color = "#333";
+			}
+			// 密码框失去焦点，判断输入是否正确
+			pwd.onblur = function() {
+				var text = pwd.value;
+				console.log(text);
+				var index = text.length;
+				if (index >= 6 && index <= 16) {
+					console.log('正确');
+					// 显示正确的判断信息
+					bg.className = 'bg bg_right';
+					tips.className = 'tips tips_right'
+					// bg.style.display = 'block';
+					// bg.style.background = 'url(day01/images/right.png)';
+					// tips.style.display = 'block';
+					tips.innerHTML = '输入正确';
+				} else {
+					console.log('不正确');
+					bg.className = 'bg bg_wrong';
+					tips.className = 'tips tips_wrong';
+					tips.innerHTML = '输入个数不是6~16位，请重新输入';
+				}
+			}
+		</script>
+	</body>
+</html>
