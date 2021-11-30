@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+</head>
+<body>
+	<ul>
+		<li>我在这1</li>
+		<li>我在这2</li>
+		<li>我在这3</li>
+	</ul>
+	<script type="text/javascript">
+		var ul = document.querySelector('ul');
+		console.log(ul);
+		// 先创建节点
+		var li = document.createElement('li');
+		// 给节点添加内容
+		li.innerHTML = '我是创建的节点';
+		// 将节点添加
+		ul.appendChild(li);
+		
+		// 创建节点
+		var li2 = document.createElement('li');
+		// 给节点添加内容
+		li2.innerHTML = '我是创建的节点2';
+		// 将节点添加
+		ul.insertBefore(li2,ul.children[0]);
+		
+		// 删除节点
+	   var node = ul.removeChild(ul.children[4]);
+	   console.log(node);
+	</script>
+</body>
+</html>
