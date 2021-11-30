@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>案例:表格隔行变色</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.table_box {
+				margin: 20px auto;
+			}
+
+			.table_box table {
+				margin: 20px auto;
+				text-align: center;
+				font-size: 14px;
+			}
+
+			.table_box tr {
+				height: 32px;
+				cursor: default;
+			}
+
+			.table_box table tr:nth-child(1) {
+				color: #0454A7;
+				background-color: rgb(30, 144, 255, 0.3);
+			}
+
+			.table_box td {
+				width: 100px;
+			}
+
+			.table_box td:nth-child(2) {
+				width: 200px;
+			}
+
+			.tr_select {
+				background-color: rgb(30, 144, 255, 0.1);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="table_box">
+			<table border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<th>代码</th>
+					<th>名称</th>
+					<th>最新公布净值</th>
+					<th>累计净值</th>
+					<th>前单位净值</th>
+					<th>净值增长率</th>
+					<th>公布日期</th>
+				</tr>
+				<tr>
+					<td>003526</td>
+					<td>广发理财30天债券B</td>
+					<td>1.075</td>
+					<td>1.079</td>
+					<td>1.074</td>
+					<td>+0.047%</td>
+					<td>2019-01-11</td>
+				</tr>
+				<tr>
+					<td>003526</td>
+					<td>广发理财30天债券B</td>
+					<td>1.075</td>
+					<td>1.079</td>
+					<td>1.074</td>
+					<td>+0.047%</td>
+					<td>2019-01-11</td>
+				</tr>
+				<tr>
+					<td>003526</td>
+					<td>广发理财30天债券B</td>
+					<td>1.075</td>
+					<td>1.079</td>
+					<td>1.074</td>
+					<td>+0.047%</td>
+					<td>2019-01-11</td>
+				</tr>
+				<tr>
+					<td>003526</td>
+					<td>广发理财30天债券B</td>
+					<td>1.075</td>
+					<td>1.079</td>
+					<td>1.074</td>
+					<td>+0.047%</td>
+					<td>2019-01-11</td>
+				</tr>
+			</table>
+		</div>
+
+		<script type="text/javascript">
+			/* 案例分析
+			1. 选中的行 显示选中的背景
+			2. 绑定事件：鼠标经过onmouseover ,通过className添加一个选中的类
+			3. 循环出所有的tr，给tr增加 鼠标经过的事件，除th外，也就是第一个tr
+			*/
+			// 获取元素
+			var tr = document.querySelectorAll('.table_box tr');
+			var table = document.querySelector('.table_box');
+			console.log(tr);
+			for (var i = 1; i < tr.length; i++) {
+				// 给tr绑定鼠标经过事件
+				tr[i].onmouseover = function(){
+					// 先取消所有选中的样式
+					for (var i = 1; i < tr.length; i++){
+						tr[i].className = '';
+					}
+					this.className = 'tr_select';
+				}
+			}
+			// 离开table 也需要移除选中状态
+			table.onmouseout = function(){
+				for (var i = 1; i < tr.length; i++){
+					tr[i].className = '';
+				}
+			}
+		</script>
+	</body>
+</html>
