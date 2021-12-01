@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>案例:表单全选取消全选案例</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.table_box {
+				font-size: 14px;
+				text-align: center;
+			}
+
+			.table_box table {
+				margin: 20px auto;
+				border-collapse: collapse;
+			}
+
+			.table_box td {
+				width: 150px;
+			}
+
+			.table_box tr {
+				height: 28px;
+			}
+
+			.table_box table tr:nth-child(1) {
+				background-color: rgb(30, 144, 255, 0.3);
+			}
+
+			.table_box tr td:nth-child(1) {
+				width: 32px;
+				cursor: default;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="table_box">
+			<table border="1" cellspacing="0" cellpadding="0">
+				<tr>
+					<th><input type="checkbox" /></th>
+					<th>商品</th>
+					<th>价钱</th>
+				</tr>
+				<tr>
+					<td>
+						<input type="checkbox" />
+					</td>
+					<td>iphone8</td>
+					<td>8000</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" /></td>
+					<td>iphone8 plus</td>
+					<td>8900</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" /></td>
+					<td>iphoneXR</td>
+					<td>5700</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" /></td>
+					<td>iphoneX</td>
+					<td>7900</td>
+				</tr>
+			</table>
+		</div>
+		<script type="text/javascript">
+			/*案例分析
+			1.选th里的复选框，则将所有td里的checkbox选中
+			2.td里的checkbox 全选中，则td里的checkbox也选中
+			3.td里的checkbox 只要没全选中，则td里的checkbox不选中
+			*/
+
+			// 获取元素
+			var thCheckbox = document.querySelector('.table_box th input');
+			var tdCheckboxs = document.querySelectorAll('.table_box td input');
+			console.log(thCheckbox);
+			console.log(tdCheckboxs);
+			
+			for (var i = 0; i < tdCheckboxs.length; i++) {
+				// 给所有td下的input添加点击事件 onclick
+				var index = 0;
+				tdCheckboxs[i].onclick = function() {
+					if (this.checked) {
+						index++;
+						console.log(index);
+						if(index == tdCheckboxs.length){
+							thCheckbox.checked='checked';
+						}	
+						
+					}else{
+						thCheckbox.checked='';
+						index = 0;
+					}
+				}
+			}
+			// th里的checkbox 选中则td里的checkbox全部选中
+			thCheckbox.onclick = function() {
+				// console.log(this.checked);
+				if(this.checked){ //选中时，所有td里checkbox选中
+					for (var i = 0; i < tdCheckboxs.length; i++){
+						tdCheckboxs[i].checked = 'checked';
+					}
+				}else{
+					for (var i = 0; i < tdCheckboxs.length; i++){
+						tdCheckboxs[i].checked = '';
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

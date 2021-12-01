@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>案例-跟随鼠标的天使</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		img{
+			position: absolute;
+			top:0;
+			left: 0;
+			width: 48px;
+			height: 48px;
+			transform: translate(50%,45%);
+			cursor: default;
+			vertical-align: middle;
+			
+		}
+	</style>
+</head>
+<body>
+	<img src="images/angel.gif" alt="天使">
+	<script>
+		/*
+		案例分析
+		1. 让天使图片跟着鼠标移动
+		2. 绑定事件：鼠标移动事件：mousemove
+		3. 这个鼠标移动是针对当前电脑屏幕来的可以用 e.pageX 和e.pageY 得到坐标，然后给到 图片需要移动的距离
+		4. 这图片是不占有位置的，用绝对定位
+		*/
+	   
+	   // 1. 获取元素
+	   var img = document.querySelector('img');
+	   // 2. 给document绑定事件：mousemove
+	   document.addEventListener('mousemove',function(e){
+		  // 3. 获取相对于文档的坐标
+		  var x = e.pageX;
+		  var y = e.pageY;
+		  console.log(x,y);
+		  // 4. 将得到的值给 img的top和left
+		  img.style.left = x - 48 + 'px';
+		  img.style.top = y - 48 + 'px';
+		  
+		 
+		  console.log(img.style.left,img.style.top);
+	   });
+	   
+	</script>
+</body>
+</html>

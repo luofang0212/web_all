@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>动态表格</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.table_box {
+				width: 800px;
+				margin: 20px auto;
+			}
+
+			.table_box table {
+				margin: 0 auto;
+				border-collapse: collapse;
+				font-size: 14px;
+				text-align: center;
+			}
+
+			.table_box table thead {
+				height: 32px;
+				background-color: #0093D9;
+				color: #fff;
+			}
+
+			.table_box tbody tr {
+				height: 28px;
+				cursor: default;
+			}
+
+			.table_box td {
+				width: 160px;
+			}
+			.no_data{
+				/* display: none; */
+				margin: 0 auto;
+				width: 644px;
+				height: 100px;
+				border: 1px solid #666;
+				border-top: none;
+				text-align: center;
+				line-height: 70px;
+			}
+			.table_box a{
+				color: #0454A7;
+				text-decoration: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="table_box">
+			<table border="1" cellspacing="0" cellpadding="0">
+				<thead>
+					<tr>
+						<td>姓名</td>
+						<td>科目</td>
+						<td>成绩</td>
+						<td>操作</td>
+					</tr>
+				</thead>
+				<tbody>
+				<!-- 	<tr>
+						<td>1</td>
+						<td>2</td>
+						<td>3</td>
+						<td><a href="javascript:;">删除</a></td>
+					</tr> -->
+				</tbody>
+			</table>
+			<div class="no_data">暂无数据</div>
+		</div>
+		<script>
+			// 1.先去准备好学生的数据
+			var datas = [{
+				name: '魏璎珞',
+				subject: 'JavaScript',
+				score: 100
+			}, {
+				name: '弘历',
+				subject: 'JavaScript',
+				score: 98
+			}, {
+				name: '傅恒',
+				subject: 'JavaScript',
+				score: 99
+			}, {
+				name: '明玉',
+				subject: 'JavaScript',
+				score: 88
+			}, {
+				name: '大猪蹄子',
+				subject: 'JavaScript',
+				score: 0
+			}];
+
+			// datas = [];
+			// 2. 获取需要进行操作的元素
+			var tbody = document.querySelector('.table_box tbody');
+			var noDate = document.querySelector('.no_data');
+			var chids = tbody.children;
+			// 3. 遍历已准备好的数据 datas
+			for (var i = 0; i < datas.length; i++) {
+				//4. 添加tr元素
+				// 创建tr 根据datas的长度生成对应的tr数量
+				var tr = document.createElement('tr');
+				// 将tr添加到表格中，最新的数据在最前面，使用 insertBefor()
+				tbody.insertBefore(tr, tbody.children[0]);
+
+				// 向tr里添加td数据，td的数据存在datas里
+				for (var k in datas[i]) {
+					// 创建td元素 根据对象里的数量进行创建
+					var td = document.createElement('td');
+					tdText = datas[i][k];
+					td.innerHTML = tdText;
+					// 添加元素
+					tr.appendChild(td);
+				}
+
+				// 创建操作列的数据 td
+				var td = document.createElement('td');
+				text = '<a href="javascript:;">删除</a>';
+				td.innerHTML = text;
+				// 添加元素
+				tr.appendChild(td);
+			}
+
+			// 5. 删除操作
+			// 获取删除操作，绑定点击事件 onclick
+			var dels = document.querySelectorAll('.table_box td a');
+			// console.log(dels);
+			for (var i = 0; i < dels.length; i++) {
+				// 给所有删除按钮绑定 点击事件
+				dels[i].addEventListener('click',function(){
+					// 点删除，就删除当前行
+					// 获取当前行 也就是tr
+					var parents = this.parentNode.parentNode;
+					// console.log(parents);
+					// 移除该节点
+					tbody.removeChild(parents);
+					nodata();
+				});
+				
+			}
+			// 判断tbody是否有数据
+			nodata();
+			function nodata(){
+				if(chids.length !== 0){
+					noDate.style.display = 'none';
+				}else{
+					noDate.style.display = 'block';
+				}
+			}
+			
+			
+		</script>
+	</body>
+</html>
