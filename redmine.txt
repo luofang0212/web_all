@@ -4,3 +4,17 @@ git config --global --unset https.proxy
 git config --global url.git://github.com/.insteadOf https://github.com/
 
 ping github.com
+
+github 命名一个提交的别名
+…or create a new repository on the command line
+
+echo "# laravel" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/luofang0212/web_all.git
+git push -u origin master
+…or push an existing repository from the command line
+
+git remote add origin https://github.com/luofang0212/web_all.git
+git push -u origin master
