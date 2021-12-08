@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 分数转换, 给一个分数， 判定等级。
+        // 大于等于90 A，
+        // 大于等于80小于90 B，
+        // 大于等于70小于80 C，
+        // 大于等于60小于70 D， 小于60 E
+        var score = prompt('请输入你的分数')
+        score = Number(score)
+        if (90 <= score) {
+            alert(score + '分，是个A')
+        } else if (80 <= score && score < 90) {
+            alert(score + '分，是个B')
+        } else if (70 <= score && score < 80) {
+            alert(score + '分，是个C')
+        } else if (60 <= score && score < 70) {
+            alert(score + '分，是个D')
+        } else {
+            alert(score + '分，是个E')
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

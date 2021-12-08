@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title></title>
+		<script type="text/javascript">
+			// 查找字符串"abcoefoxyozzopp"中所有o出现的位置以及次数
+			var str = 'abcoefoxyozzopp';
+			var index = str.indexOf('o');  //记录出现的位置
+			var num = 0;  //记录出现的次数
+			while(index != -1){
+				console.log('出现的位置：' + index);
+				num++;
+				index = str.indexOf('o', index + 1);
+			}
+			
+			console.log('出现的次数：' + num)
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

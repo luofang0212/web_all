@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+	<script type="text/javascript">
+		// 书写一个函数，判断指定数据是否存在于指定数组中
+		// 要求：
+		// 	1、函数名称：exist
+		// 	2、函数调用方式：exist(数据data，数组arr)
+		// /3、函数功能：判断“数据data”是否存在于“数组arr”中，如果是函数返回值为true，如果不是函数返回值为false
+		function exist(data,arr){
+			var flag = false;
+			for(var i = 0; i<arr.length; i++){
+				if(arr[i] === data){ //判断 data是否和数组中的值是否相等
+					flag = true;
+				}else{
+					flag = false;
+				}	
+			}
+			return flag;
+		}
+		data = 'pink';
+		arr = [1,2,3,4,'2','pink'];
+		res = exist(data,arr);
+		console.log(res)
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

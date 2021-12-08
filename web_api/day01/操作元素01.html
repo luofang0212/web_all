@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+	<style type="text/css">
+		img{
+			width: 200px;
+		}
+	</style>
+</head>
+<body>
+	<div>我是小方</div>
+	<img src="images/ad1.gif" alt="123" title="我流氓" id="img1"> <br/>
+	<a href="http://www.baidu.com">百度</a>
+	<script type="text/javascript">
+		// 获取元素
+		var div = document.querySelector('div');
+		div.onclick = function(){
+			// div.innerText='<strong>小方真好</strong>';
+			div.innerHTML='<strong>小方真好</strong>';
+		}
+		
+		var img = document.querySelector('img');
+		img.onclick = function(){
+			img.src = 'images/3.jpg';
+			img.alt="456";
+			img.title = "我不是流氓";
+			img.id = 'img2';
+			console.log(img);
+		}
+		
+		var a = document.querySelector('a');
+		a.onmouseover = function(e){
+			a.href = 'http://www.sina.com.cn';
+			a.innerHTML='新浪';
+			// console.log(e);
+			console.log(a)
+		}
+		
+	</script>
+</body>
+</html>

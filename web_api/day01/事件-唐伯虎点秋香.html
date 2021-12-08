@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+</head>
+<body>
+	<!-- 需求：点击唐伯虎按钮，弹出：点秋香 -->
+	<button id="btn">唐伯虎</button>
+	
+	<script type="text/javascript">
+		// 获取元素
+		var btn = document.querySelector('#btn');
+		
+		// 绑定事件 :确认事件类型，这里是点击用的是：鼠标点击(onclick)
+		// 添加事件处理程序：程序处理
+		btn.onclick = function(){
+			alert('点秋香');
+		}
+	</script>
+	
+	
+	
+</body>
+</html>

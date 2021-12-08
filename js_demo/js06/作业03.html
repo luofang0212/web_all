@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title></title>
+		<script type="text/javascript">
+			// 请描述下面代码的输出结果以及运行原因
+			// var num = 1;
+			// function demo() {
+			// 	console.log(num);  // num= undinfine
+			// 	function demoSon() {
+			// 		console.log(num);  //num=2
+			// 		num = 3;
+			// 		console.log(num); //num=3
+			// 	}
+			// 	var num = 2;
+			// 	demoSon();
+			// }
+			// demo();
+			
+			
+			//等价于
+			var num;
+			function demo() {
+				console.log(num);  // num=undindine  
+				var num;
+				 num = 2;
+				demoSon();
+				function demoSon() {
+					console.log(num);
+					num = 3;
+					console.log(num);
+				}
+			}
+			num=1;
+			demo();
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //      接收班长口袋里的钱数？
+        // ​	若大于等于2000，请大家吃西餐。
+        // ​	若小于2000，大于等于1500，请大家吃快餐。
+        // ​	若小于1500，大于等于1000，请大家喝饮料。
+        // ​	若小于1000，大于等于500，请大家吃棒棒糖。
+        // ​	否则提醒班长下次把钱带够
+        var money = prompt('班长口袋有钱钱哦！')
+        var banzhang_money = money - 0
+        if (banzhang_money >= 2000) {
+            alert('班长口袋有' + banzhang_money + '元，请大家吃西餐')
+        } else if (1500 <= banzhang_money && banzhang_money < 2000) {
+            alert('班长口袋有' + banzhang_money + '元，请大家吃快餐')
+        } else if (1000 <= banzhang_money && banzhang_money < 1500) {
+            alert('班长口袋有' + banzhang_money + '元，请大家喝饮料')
+        } else if (500 <= banzhang_money && banzhang_money < 1000) {
+            alert('班长口袋有' + banzhang_money + '元，请大家棒棒糖')
+        } else {
+            alert('班长口袋有' + banzhang_money + '元，提醒班长下次把钱带够')
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

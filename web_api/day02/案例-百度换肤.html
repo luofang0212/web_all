@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>百度换肤</title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+			}
+
+			body {
+				background: url(images/1.jpg) no-repeat center top;
+				background-size: 1600px auto;
+			}
+
+			img {
+				vertical-align: middle;
+			}
+
+			.box ul {
+				position: absolute;
+				top: 50px;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+
+			.box li {
+				float: left;
+				list-style: none;
+				width: 110px;
+				height: 61px;
+				border: 3px solid #fff;
+			}
+
+			.box li img {
+				width: 100%;
+				height: 100%;
+				text-align: center;
+			}
+
+			.box img:hover {
+				transform: scale(1.2);
+			}
+
+			.box .img_selected {
+				border: 3px solid #333;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<ul>
+				<li class="img_selected"><img src="images/1.jpg"></li>
+				<li><img src="images/2.jpg"></li>
+				<li><img src="images/3.jpg"></li>
+				<li><img src="images/4.jpg"></li>
+			</ul>
+			<script type="text/javascript">
+				/* 案例分析
+				1、获取到所有li元素，给每个li添加点击事件 onclick
+				2、再获得到li里面img的图片地址，给到body的背景图片地址
+				3、点击当前li，则body的背景图片为li-img下对应的图片
+				 */
+				// 获取元素
+				var body = document.body;
+				var lis = document.querySelectorAll('.box li');
+				console.log(lis);
+
+				for (var i = 0; i < lis.length; i++) {
+					// 根据当前li点击后，body就显示对应的背景图片
+					lis[i].onclick = function() {
+						for (var i = 0; i < lis.length; i++) {
+							// 先将所有的选中当前li的样式去掉
+							lis[i].className = '';
+						}
+						this.className = 'img_selected';
+						// 获取当前li的图片
+						var imgs = this.querySelector('img');
+						// console.log(imgs);  
+						var imgsrc = imgs.src; //获取到当前li里面img的图片地址
+						// console.log(imgsrc);
+						body.style.backgroundImage = 'url(' + imgsrc + ')';
+					}
+				}
+			</script>
+		</div>
+	</body>
+</html>

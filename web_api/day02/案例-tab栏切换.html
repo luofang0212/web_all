@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>tab栏切换</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			li {
+				list-style: none;
+			}
+
+			.tab-title {
+				width: 900px;
+				height: 58px;
+				background-color: #DCDCDC;
+				border-bottom: 1px solid #C81623;
+			}
+
+			.tab-title li {
+				float: left;
+				width: 150px;
+				height: 58px;
+				font-size: 18px;
+				color: #333;
+				text-align: center;
+				line-height: 58px;
+				cursor: pointer;
+			}
+
+			.tab-title .current {
+				color: #fff;
+				background-color: #C81623;
+			}
+
+			.content div {
+				padding-top: 14px;
+				width: 100%;
+				height: 100px;
+				color: #0092D8;
+				font-size: 24px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="tab-box">
+			<!-- tab栏 -->
+			<div class="tab-title">
+				<ul>
+					<li class="current">商品介绍</li>
+					<li>规格与包装</li>
+					<li>售后保障</li>
+					<li>商品评价(1.1万+)</li>
+				</ul>
+			</div>
+			<!-- tab栏 里的内容 -->
+			<div class="content">
+				<div class="content-iprodu">商品介绍 内容部分</div>
+				<div class="content-rule">规格与包装 内容部分</div>
+				<div class="content-saled">售后保障 内容部分</div>
+				<div class="content-appraise">商品评价 内容部分</div>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			/*案例分析
+			1. 将tab里的小li选中，下面的内容显示对应盒子里的,其他tab不选中
+			2. tab栏每个小li 绑定点击事件 onclick 
+			3. 显示当前里对应的content内容，其他内容就隐藏 display：none
+			4.content 的div盒子和li个数是对应的，所以可以li用自定义属性给 加上data-index属性，从0开始
+			5.规律：上面选中的小li 和 content里的div数量是一 一对应的
+			*/
+
+			// 1. 获取元素
+			var lis = document.querySelectorAll('.tab-title li');
+			var divs = document.querySelectorAll('.content div');
+			console.log(lis);
+			console.log(divs);
+			// 2. 遍历出所有li ，给li注册事件
+			for (var i = 0; i < lis.length; i++) {
+				lis[i].setAttribute('data-index', i); //给li设置索引号
+				// 给li注册onclick事件
+				lis[i].addEventListener('click', function() {
+					//先把所有li的 current 类移除，去除选中结构
+					for (var i = 0; i < lis.length; i++) {
+						lis[i].className = '';
+					}
+					this.className = 'current';
+
+					var index = this.getAttribute('data-index'); // 获取到索引号
+					console.log(index);
+					// 显示li里对应的content的内容
+					for (var i = 0; i < divs.length; i++) {
+						divs[i].style.display = 'none';
+					}
+					divs[index].style.display = 'block';
+				});
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 540到970之间的屏幕宽度设置 */
+        
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        /* 屏幕宽度小于540 显示红色 */
+        
+        @media screen and (max-width: 539px) {
+            body {
+                background-color: red;
+            }
+        }
+        /* 屏幕宽度540到970之间 显示绿色 */
+        
+        @media screen and (min-width: 540px) and (max-width: 969px) {
+            body {
+                background-color: green;
+            }
+        }
+        /* 屏幕宽度大于970 显示蓝色 */
+        
+        @media screen and (min-width:970px) {
+            body {
+                background-color: blue;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+
+</html>

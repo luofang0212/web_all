@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+</head>
+<body>
+	<input type="text" value="123" data-index="1" />
+	<input type="text" value="234" class="ipt2"/>
+	<script type="text/javascript">
+		var ipt = document.querySelector('input');
+		var ipt2 = document.querySelector('.ipt2');
+		
+		//1. element.属性名  就可以获取到属性值
+		console.log(ipt.value);  
+		//2. element.getAttribute(属性名) 也可以获取到属性值
+		console.log(ipt2.getAttribute('value'));
+		
+		//3. 获取自定义属性
+		// console.log(ipt.data-index);  //会报错
+		// element.getAttribute(属性名) 主要用于自定义属性，就是程序员自己定义的属性
+		console.log(ipt.getAttribute('data-index'));  
+		// 操作属性
+		ipt.setAttribute('data-index',3);
+		ipt.title = '789';
+		
+		//移除属性
+		ipt.removeAttribute('value');
+		ipt.title = '';
+	</script>
+</body>
+</html>

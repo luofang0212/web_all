@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>案例：简单版发布留言案例</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			li {
+				list-style: none;
+			}
+
+			a {
+				text-decoration: none;
+			}
+
+			.quick-comment-body {
+				position: relative;
+				margin: 20px auto;
+				width: 400px;
+				border: 3px solid #1474AF;
+			}
+
+			.editor-messages {
+				box-sizing: border-box;
+				margin: 12px 0 12px 14px;
+				width: 280px;
+				height: 150px;
+				border: 1px solid #1474AF;
+				font-size: 18px;
+				font-weight: 500;
+				outline: none;
+				resize: none;
+				color: #ccc;
+				font-size: 14px;
+				padding: 5px;
+			}
+			
+			
+			button {
+				position: absolute;
+				top: 135px;
+				right: 14px;
+				width: 80px;
+				height: 28px;
+				border: 0;
+				font-size: 14px;
+				font-weight: 600;
+				background-color: #0093D9;
+				color: #fff;
+			}
+
+			.all-messages {
+				width: 100%;
+				margin-bottom: 14px;
+			}
+
+			.all-messages ul {
+				margin-left: 12px;
+			}
+
+			.all-messages li {
+				position: relative;
+				padding: 5px 0;
+				margin-bottom: 5px;
+				font-size: 14px;
+				border-bottom: 1px solid #ccc;
+			}
+
+			.all-messages li span {
+				display: block;
+				width: 280px;
+				word-wrap: break-word;
+			}
+
+			.all-messages li a {
+				position: absolute;
+				display: block;
+				right: 40px;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 50px;
+				height: 18px;
+				color: #fff;
+				font-size: 12px;
+				background-color: #C81623;
+				text-align: center;
+				line-height: 18px;
+				border-radius: 4px;
+			}
+
+			.wrong {
+				display: none;
+				position: absolute;
+				left: 12px;
+				top: 167px;
+				color: #C81623;
+				font-size: 12px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="quick-comment-body">
+			<textarea class="editor-messages">请输入留言</textarea>
+			<span class="wrong">请输入留言，才可以发布</span>
+			<div class="all-messages">
+				<ul>
+				</ul>
+			</div>
+			<button type="button">发布留言</button>
+		</div>
+		<script type="text/javascript">
+			/*
+		案例分析
+		1. 留言板 输入留言，点击发布留言，则最下方显示留言信息
+		2. 最新的留言 显示在最前面
+		3. 每个留言上都会显示 删除 按钮
+		4. 点【删除】 当前这条留言会被删除
+		*/
+
+			// 1. 获取元素
+			var button = document.querySelector('button');
+			var textMessage = document.querySelector('.editor-messages');
+			var ul = document.querySelector('.all-messages ul');
+			var wrong = document.querySelector('.wrong');
+
+			//2. 给发布留言添加事件: 点击事件 click
+			button.addEventListener('click', function() {
+				var text = textMessage.value;
+				if (text === '' || text === '请输入留言') {
+					wrong.style.display = 'block';
+					textMessage.style.color = '#ccc';
+					return false;
+				} else {
+					wrong.style.display = 'none';
+					// console.log(text);
+					//3. (1)创建一个li
+					var li = document.createElement('li');
+					// (2)将留言信息放进li里面
+					li.innerHTML = '<span>' + text + '</span>' + '<a href="javascript:;">删除</a>';
+					// (3)将li标签，添加到当前的ul里，最前面
+					ul.insertBefore(li, ul.children[0]);
+					textMessage.value = '请输入留言';
+					textMessage.style.color = '#ccc';
+
+				}
+				// 4、删除留言,给删除按钮绑定事件
+				var del = document.querySelector('.all-messages li a');
+				var ulchidls = ul.children;
+				console.log(ulchidls);
+				del.addEventListener('click', function() {
+					wrong.style.display = 'none';
+					var p = this.parentNode;
+					ul.removeChild(p); //删除当前的节点
+				});
+
+			});
+			textMessage.addEventListener('focus',function(){
+				textMessage.value = '';
+				textMessage.style.color = '#333';
+				wrong.style.display = 'none';
+			})
+		</script>
+	</body>
+</html>

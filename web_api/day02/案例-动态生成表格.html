@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>动态生成表格</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.table_box {
+				width: 400px;
+				margin: 0 auto;
+			}
+
+			.table_box table {
+				border-collapse: collapse;
+				font-size: 14px;
+			}
+
+			.table_box table tr {
+				height: 28px;
+				cursor: default;
+			}
+
+			.table_box table th {
+				width: 100px;
+				background-color: #87CEFA;
+			}
+
+			.table_box table td {
+				text-align: center;
+				width: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="table_box">
+			<table border="1" cellspacing="0" cellpadding="0">
+				<tr>
+					<th>姓名</th>
+					<th>科目</th>
+					<th>成绩</th>
+					<th>操作</th>
+				</tr>
+				<!-- <tr>
+					<td>张三</td>
+					<td>javaScript</td>
+					<td>100</td>
+					<td><a href="javascript:;">删除</a></td>
+				</tr>
+				<tr>
+					<td>张三</td>
+					<td>javaScript</td>
+					<td>100</td>
+					<td><a href="javascript:;">删除</a></td>
+				</tr> -->
+			</table>
+		</div>
+		<script type="text/javascript">
+			// 准备数据
+			var data = [{
+				name: '魏璎珞',
+				subject: 'JavaScript',
+				score: 100
+			}, {
+				name: '弘历',
+				subject: 'JavaScript',
+				score: 98
+			}, {
+				name: '傅恒',
+				subject: 'JavaScript',
+				score: 99
+			}, {
+				name: '明玉',
+				subject: 'JavaScript',
+				score: 88
+			}, {
+				name: '大猪蹄子',
+				subject: 'JavaScript',
+				score: 0
+			}];
+
+			// 获取元素
+			var table = document.querySelector('table');
+			var trs = document.querySelectorAll('.table_box table tr');
+			console.log(trs);
+			// 给表格动态添加数据，从第二行开始，也就是索引是1
+			for (var i = 0; i < data.length; i++) {
+				// 创建tr元素
+				var tr = document.createElement('tr');
+				console.log(tr);
+				// 添加元素
+				table.insertBefore(tr,table.children[1]);  // 新进来的元素应显示到最前面
+				
+				for(var k in data[i]){
+					var td = document.createElement('td');
+					td.innerHTML = data[i][k];
+					tr.appendChild(td);
+				}
+				var td = document.createElement('td');
+				td.innerHTML = '<a href="javascript:;">删除</a>';
+				tr.appendChild(td);
+				
+				//给删除 按钮添加点击事件
+				var del = document.querySelector('td a');
+				del.addEventListener('click',function(){
+					var parent = this.parentNode.parentNode;
+					console.log(parent);
+					table.removeChild(parent);
+				});
+				
+			}
+			
+		</script>
+	</body>
+</html>

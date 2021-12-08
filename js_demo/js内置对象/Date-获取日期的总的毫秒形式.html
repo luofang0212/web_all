@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title></title>
+		<script type="text/javascript">
+			console.log('---------方式1----------');
+			var now1 = new Date();
+			console.log(now1.valueOf()); //获取对象的原始值
+			console.log(now1.getTime());
+
+			console.log('---------方式2----------');
+			var now2 = +new Date();
+			console.log(now2);
+
+			// HTML5提供的方法
+			var now3 = Date.now();
+			console.log(now3);
+
+			//未来时间-现在时间 换成天、时、分、秒
+			var now4 = + new Date();
+			var now5 = + new Date('2021-11-24 11:00:00');
+			var times = (now5 - now4)/1000;  //返回的是总毫秒数，/1000 得到秒数
+			console.log(times)
+			// d = parseInt(总秒数/ 60/60 /24); // 计算天数
+			// h = parseInt(总秒数/ 60/60 %24) // 计算小时
+			// m = parseInt(总秒数 /60 %60 ); // 计算分数
+			// s = parseInt(总秒数%60); // 计算当前秒数
+			d = parseInt(times / 60 / 60 / 24);
+
+			h = parseInt(times / 60 / 60 % 24);
+			h = h < 10 ? '0' + h : h;
+
+			m = parseInt(times / 60 % 60);
+			m = m < 10 ? '0' + m : m;
+
+			s = parseInt(times % 60);
+			s = s < 10 ? '0' + s : s;
+
+			var times = d + '天' + h + ':' + m + ':' + s
+			console.log(times);
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

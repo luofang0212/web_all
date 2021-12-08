@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title></title>
+	</head>
+	<body>
+		<div class="grandeFather">
+			<div class="father">
+				<div class="son">
+					<p>是p呀</p>
+					我是个div
+				</div>
+			</div>
+		</div>
+
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+
+		<script type="text/javascript">
+			var son = document.querySelector('.son');
+			// 返回的是亲爸爸
+			// var parent = son.parentNode;
+			// console.log(parent);
+
+			var father = document.querySelector('.father');
+			// var child = father.childNodes; //返回所有的节点 包含文本节点，不推荐
+			var child = father.children; // 返回所有的子元素节点，其余节点不返回
+			console.log(child);
+
+			var ul = document.querySelector('ul');
+
+			var firstChild = ul.firstElementChild;
+			var lastChild = ul.lastElementChild;
+			console.log(firstChild);
+			console.log(lastChild);
+
+
+			var childs = ul.children;
+			console.log(childs);
+			//第一个
+			var firstChild1 = childs[0];
+			var lastChild1 = childs[childs.length - 1];
+			console.log(firstChild1);
+			console.log(lastChild1);
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>仿京东显示密码</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			input,
+			button {
+				outline: none;
+			}
+
+			.login_box {
+				position: relative;
+				width: 400px;
+				height: 200px;
+				margin: 20px auto;
+			}
+
+			.login_box form {
+				position: absolute;
+				top: 24px;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+
+			.login_box h5 {
+				margin-bottom: 12px;
+				font-size: 16px;
+				font-weight: 500;
+				color: #333;
+				text-align: center;
+			}
+
+			.login_box input {
+				width: 300px;
+				height: 28px;
+				margin-top: 12px;
+				color: #ccc;
+				font-size: 14px;
+				border: none;
+				border-bottom: 1px solid #ccc;
+				text-indent: 0.5em;
+			}
+
+			.login_box button {
+				margin-top: 14px;
+				width: 300px;
+				height: 28px;
+				border: none;
+				color: #fff;
+				background-color: #C81623;
+				border-radius: 12px;
+			}
+
+			.pwd_box {
+				position: relative;
+			}
+
+			.eye {
+				position: absolute;
+				top: 50%;
+				right: 5px;
+				transform: translateY(-50%);
+				display: block;
+				width: 18px;
+				height: 18px;
+				background: url(images/close.png) no-repeat;
+				background-size: 18px auto;
+				cursor: default;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="login_box">
+			<h5>京东登录</h5>
+			<form action="">
+				<input type="text" placeholder="用户名/邮箱/已验证手机" class="uname" />
+				<div class="pwd_box">
+					<input type="password" placeholder="请输入密码" class="pwd" /><br />
+					<i class="eye"></i>
+				</div>
+
+				<button type="button">登录</button>
+			</form>
+		</div>
+		<script type="text/javascript">
+			//获取 关闭眼睛所在的元素
+			var eye = document.querySelector('.eye');
+			var pwd = document.querySelector('.pwd');
+			// 事件1：点击onclick 关闭的眼睛变成睁眼图片，并且输入密码 可明文显示出来
+			var flag = false;
+			eye.onclick = function() {
+				if (flag) {
+					eye.style.backgroundImage = 'url(images/close.png)';
+					pwd.type = 'password';
+					flag = false;
+				} else {
+					eye.style.backgroundImage = 'url(images/open.png)';
+					pwd.type = 'text';
+					flag = true;
+				}
+			}
+			pwd.onclick = function() {
+				pwd.style.color = '#333';
+			}
+			// 事件2：鼠标移开 眼睛元素区域，眼睛闭起，且密码 不可显示出
+			eye.onmouseout = function() {
+				eye.style.backgroundImage = 'url(images/close.png)';
+				pwd.type = 'password';
+				flag = false;
+			}
+		</script>
+	</body>
+</html>

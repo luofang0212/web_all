@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 数组排序（冒泡排序）
+        // 冒泡排序：是一种算法，把一系列的数据按照一定的顺序进行排列显示(从小到大或从大到小）。
+        // 例如，我们可以将数组 [5, 4, 3, 2, 1]中的元素按照从小到大的顺序排序，输出： 1，2，3，4，5
+        var arr = [5, 4, 3, 2, 1];
+        for (var i = 0; i < arr.length; i++) { //交换趟数， 就是数组的长度
+            for (var j = 0; j < arr.length - i - 1; j++) { //每趟 交换次数
+                if (arr[j] > arr[j + 1]) {
+                    console.log(arr[j], arr[j + 1])
+                    var temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+        console.log(arr)
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
