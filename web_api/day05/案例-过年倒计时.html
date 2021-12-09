@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>过年倒计时</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.count-down{
+			position: relative;
+			margin: 50px auto;
+			width: 300px;
+			height: 300px;
+			background-color: pink;
+			text-align: center;
+		}
+		
+		.count-down h4{
+			font-size: 18px;
+		}
+		.times{
+			/* position: absolute; */
+		/* 	top: 36px;
+			left: 50%; */
+			width: 100%;
+			transform: translateX(-50%);
+			background-color: purple;
+		}
+		.times span{
+			float: left;
+			display: block;
+		}
+		.times span:nth-child(1){
+			font-size: 19px;
+			width: 50px;
+		}
+	</style>
+</head>
+<body>
+	<div class="count-down">
+		<h4>离2022年过年，还有</h4>
+		<div class="times">
+			<span>254天</span>
+			<span>14时</span>
+			<span>28分</span>
+			<span>4秒</span>
+		</div>
+	</div>
+	<script>
+		// 时间格式：240天 14时 28分 4秒
+		// 页面上有一个倒计时时钟，显示距离20222年过年还有多长时间，要求自动变化，具体表现如下图：
+	</script>
+</body>
+</html>

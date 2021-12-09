@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title></title>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<!-- 差值表达式 -->
+			<div>{{msg + ' 我很好'}}</div>
+			
+			<!-- v-text纯文本填充 -->
+			<div v-text="msg"></div>
+
+			<!-- v-html 填充html片段 -->
+			<div v-html="msg2"></div>
+
+			<!-- v-pre 填充原始信息 -->
+			<div v-pre="msg3">{{msg3}}</div>
+
+		</div>
+		<script src="js/vue.js"></script>
+		<script>
+			var vm = new Vue({
+				// el 元素挂载的位置
+				el: '#app',
+				// data 模型数据 是一个对象
+				data: {
+					msg: 'hello 纯文本拉',
+					msg2: '<strong>html 文本拉</strong>',
+					msg3: '<strong>pre 文本拉</strong>'
+				}
+			});
+		</script>
+	</body>
+</html>

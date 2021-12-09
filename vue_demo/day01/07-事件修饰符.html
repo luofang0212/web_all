@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title></title>
+		<style>
+			.father{
+				width: 200px;
+				height: 200px;
+				background-color: pink;
+			}
+				
+			.son{
+				width: 100px;
+				height: 100px;
+				background-color: purple;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<!-- v-no:click.stop 阻止冒泡 -->
+			<div class="father" @click="handler1()">
+				<div class="son" @click.stop="handler2()">123</div>
+			</div>
+			
+			<!-- v-no:click.prevent 阻止冒泡 -->
+			<a href="http://www.baidu.com" @click.prevent="handler3()">百度</a>
+		</div>
+		<script src="js/vue.js"></script>
+		<script>
+			var vm = new Vue({
+				el:'#app',
+				data:{
+					
+				},
+				methods:{
+					handler1:function(){
+						alert('我是father');
+					},
+					handler2:function(){
+						alert('我是son');
+					},
+					handler3:function(){
+						alert('我是a');
+					},
+				}
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+	<style type="text/css">
+		div{
+			margin: 100px;
+			width: 200px;
+			height: 200px;
+			border: 10px solid red;
+			background-color: pink;
+			/* overflow: scroll; */
+		}
+	</style>
+</head>
+<body>
+	<div>
+		超级大傻子
+		超级大傻子
+		超级大傻子
+		超级大傻子
+		超级大傻子超级大傻子超级大傻子超级大傻子超级大傻子超级大傻子超级大傻子超级大傻子
+		超级大傻子超级大傻子超级大傻子超级大傻子超级大傻子超级大傻子超级大傻子超级大傻子
+		超级大傻子超级大傻子超级大傻子超级大傻子超级大傻子超级大傻子超级大傻子超级大傻子
+		超级大傻子超级大傻子超级大傻子超级大傻子
+		
+	</div>
+	<script type="text/javascript">
+		var div = document.querySelector('div');
+		console.log(div.clientTop);
+		console.log(div.clientLeft);
+		console.log(div.clientWidth);
+		console.log(div.clientHeight);
+		
+		div.addEventListener('scroll',function(){
+			// console.log(div.scrollTop);
+			// console.log(div.scrollLeft);
+			// console.log(div.scrollWidth);
+			// console.log(div.scrollHeight);
+			// console.log(div.clientTop);
+		});
+	</script>
+</body>
+</html>

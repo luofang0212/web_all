@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title></title>
+		<style>
+			[v-cloak] {
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 需求：实现简单的加法计算，
+		分别输入数值a和数值b
+		点击计算按钮
+		结果显示在下面。 -->
+		<div id="app">
+			<h3>简单计算器</h3>
+<!-- 			<div>{{numA}}</div>
+ -->			数值A: <input type="text" v-model.lazy.trim="numA" @focus="forc"> <br />
+			数值B: <input type="text" v-model.lazy.trim="numB" @focus="forc"> <br /> <br />
+			<button type="button" @click="add">计算</button>
+			<p v-cloak>{{"计算结果: " + sumValue}}</p>
+		</div>
+		<script src="js/vue.js"></script>
+		<script>
+			var vm = new Vue({
+				el: '#app',
+				data: {
+					numA: '',
+					numB: '',
+					sumValue: ''
+				},
+				methods: {
+					add: function() {
+						if(this.numA == '' || this.numB==''){
+							alert("数值A或数值B不能为空")
+						}else{
+							this.sumValue = parseFloat(this.numA) + parseFloat(this.numB);
+						}
+						
+					},
+					forc: function() {
+						this.sumValue = '';
+					}
+				}
+			});
+		</script>
+	</body>
+</html>

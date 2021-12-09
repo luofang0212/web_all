@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title></title>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<input type="text"  @keyup.ct="handle"/>
+			<button type="button" @click="handle">提交</button>
+
+		</div>
+		<script src="js/vue.js"></script>
+		<script>
+			// 自定义修饰符
+			Vue.config.keyCodes.ct = 17;
+			var vm = new Vue({
+				el: '#app',
+				data: {
+					ipt:''
+				},
+				methods:{
+					handle:function(event){
+						console.log(event.keyCode);
+						alert('提交啦')
+						
+					}
+				}
+			});
+		</script>
+	</body>
+</html>

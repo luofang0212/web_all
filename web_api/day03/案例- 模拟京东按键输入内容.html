@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>案例： 模拟京东按键输入内容</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			div {
+				margin: 20px auto;
+				width: 280px;
+			}
+
+			input {
+				outline: none;
+				width: 280px;
+				height: 38px;
+				border: 1px solid #0093D9;
+				margin-bottom: 20px;
+				font-size: 16px;
+				line-height: 38px;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<input type="search" placeholder="请输入关键词" class="search" />
+			<input type="text" />
+		</div>
+
+
+		<script>
+			// 当我们按下 s 键， 光标就定位到搜索框
+			/*案例分析
+			1、按下 s 键，光标就定位到搜索框内
+			2、绑定事件：键盘弹起事件，onkeyup 
+			*/
+
+			// 1. 获取元素
+			var search = document.querySelector('.search');
+
+			// 2. 绑定键盘按下事件 keyup
+			document.addEventListener('keyup', function(e) {
+				// 获取s键盘的ASCII码  s对应的是83
+				var keyCode = e.keyCode;
+				if (keyCode === 83) {
+					search.focus();
+				}
+			});
+		</script>
+	</body>
+</html>

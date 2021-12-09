@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 200px;
+			height: 200px;
+			border: 1px solid #ccc;
+		}
+	</style>
+	
+</head>
+<body>
+	<div></div>
+	<script>
+		var div = document.querySelector('div');
+		// div.addEventListener('touchstart',function(e){
+		// 	console.log(e);
+		// });
+		
+		// div.addEventListener('touchmove',function(e){
+		// 	console.log(e);
+		// });
+		
+		div.addEventListener('touchend',function(e){
+			console.log(e);
+		});
+	</script>
+</body>
+</html>

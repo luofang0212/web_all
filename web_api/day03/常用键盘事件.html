@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title></title>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<input type="text"> <br/>
+		<input type="text"><br/>
+		<input type="text"><br/>
+
+		<script>
+			var input = document.querySelectorAll('input');
+			// console.log(input);
+			// 键盘弹起, 按键被松开时触发
+			input[0].addEventListener('keyup', function(e) {
+					console.log(e.keyCode + 'keyup');
+			});
+			
+			// 键盘按下， 键盘被按下时触发，字母不区分大小写
+			input[1].addEventListener('keydown', function(e) {
+					console.log(e.keyCode + 'keydown');
+			});
+			
+			// 键盘按下， 键盘被按下时触发，字母区分大小写, 但是不识别功能键，回车键还是识别的
+			input[2].addEventListener('keypress', function(e) {
+					console.log(e.keyCode + 'keypress');
+			});
+			
+			// 上面3个事件的执行顺序是，先 keydown-keypress-keyup
+		</script>
+	</body>
+</html>

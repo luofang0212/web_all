@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>返回顶部</title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+
+			.page {
+				position: relative;
+				margin: 0 auto;
+				width: 1200px;
+			}
+
+
+			.page h5 {
+				margin: 14px 0;
+				font-size: 28px;
+				text-align: center;
+			}
+			
+			.content {
+				margin-bottom: 20px;
+			}
+
+			.content div {
+				width: 1200px;
+				height: 400px;
+				margin-bottom: 14px;
+			}
+			
+			
+
+			.p1 {
+				background-color: pink;
+			}
+
+			.p2 {
+				background-color: #F79100;
+			}
+
+			.p3 {
+				background-color: #66CDAA;
+			}
+
+			.p4 {
+				background-color: #F5EECF;
+			}
+
+			.p5 {
+				background-color: #1BA1E6;
+			}
+			.back{
+				display: none;
+				position: fixed;
+				top: 0;
+				left: 1624px;
+				padding: 5px 0;
+				width: 35px;
+				height: 30px;
+				font-size: 12px;
+				color: #fff;
+				background-color: #C81523;
+				text-align: center;
+				cursor: default;
+			}
+
+			
+		</style>
+	</head>
+	<body>
+		<div class="page">
+			<h5>我是标题</h5>
+			<div class="content">
+				<div class="p1"></div>
+				<div class="p2"></div>
+				<div class="p3"></div>
+				<div class="p4"></div>
+				<div class="p5"></div>
+			</div>
+			<div class="back">
+				<p>返回</p>
+				<p>顶部</p>
+			</div>
+		</div>
+		
+		<script>
+		
+			window.addEventListener('load',function(){
+				var back = document.querySelector('.back');
+				var page = document.querySelector('.page');
+				// var p3 = document.querySelector('.p3');
+				var p2 = document.querySelector('.p2');
+				// 获取到 p2的位置，页面滚动了多少 
+				var p2Top = p2.offsetTop;
+				console.log(p2Top);
+				document.addEventListener('scroll',function(){
+					//window.pageYOffset  被卷去的头部
+					// console.log(window.pageYOffset);
+					if(window.pageYOffset >= p2Top){
+						back.style.display = 'block';
+						back.style.top = p2Top + 'px';
+					}else{
+							back.style.display = 'none';
+					}
+				})
+				
+				back.addEventListener('click',function(){
+					window.scroll(0,0);
+				});
+				
+			});
+		</script>
+	</body>
+</html>
