@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title></title>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<ul>
+				<li v-for="item in lis">{{item}}</li>
+			</ul>
+			<ul>
+				<li :key="item.index" v-for="(item,index) in lis">{{item + '------' + index}}</li>
+			</ul>
+
+		</div>
+		<script src="js/vue.js"></script>
+		<script>
+			var vm = new Vue({
+				el: '#app',
+				data: {
+					lis: ['a', 'b', 'c', 'd', 'e']
+				}
+			});
+		</script>
+	</body>
+</html>

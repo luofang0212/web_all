@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title></title>
+		<style>
+			#app div {
+				width: 100px;
+				height: 100px;
+				margin-bottom: 10px;
+				border: 1px solid #333;
+			}
+
+			.bg1 {
+				background-color: pink;
+			}
+
+			.size {
+				font-size: 28px;
+			}
+
+			.bg2 {
+				background-color: purple;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<!-- 对象语法 -->
+			<!-- 		<div :class="{bg1: isActive}"></div>
+			<div :class="{bg2: isError}"></div> -->
+
+			<!-- 数组语法 -->
+			<div :class="[bg1,size]">div1</div>
+			<div :class="classArr">div2</div>
+		</div>
+		<script src="js/vue.js"></script>
+		<script>
+			var vm = new Vue({
+				el: '#app',
+				data: {
+					// isActive: true,
+					// isError: false
+					// activeClass
+					bg1: 'bg1',
+					size: 'size',
+					classArr: ['bg1', 'size']
+				}
+			});
+		</script>
+	</body>
+</html>

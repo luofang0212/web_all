@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title></title>
+		<style>
+			#app div {
+				width: 100px;
+				height: 100px;
+				border: 1px solid #333;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<!-- 对象方式 -->
+			<div v-bind:style="{color: activeColor,fontSize: fontSize,backgroundColor: bgColor}">123</div>
+
+			<!-- 数组方式 -->
+			<div v-bind:style="[bgClass,overriding]">321</div>
+		</div>
+		<script src="js/vue.js"></script>
+		<script>
+			var vm = new Vue({
+				el: '#app',
+				data: {
+					activeColor: 'pink',
+					fontSize: '28px',
+					bgColor: 'red',
+
+					bgClass: {
+						"fontSize": "28px",
+						"backgroundColor": "pink"
+					},
+					overriding: {
+						"color": "blue"
+					}
+				}
+			});
+		</script>
+	</body>
+</html>
