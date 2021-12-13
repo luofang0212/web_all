@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title></title>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<div>{{msg}}</div>
+			<button type="button" @click="update">更新</button>
+			<button type="button" @click="destroy">销毁</button>
+			<div>{{msg}}</div>
+		</div>
+		<script src="js/vue.js"></script>
+		<script>
+			// 生命周期
+			/*
+			 1. 事物从出生到死亡的过程
+			 2. Vue实例从创建到销毁的过程，这些过程中伴随着一些函数的自调用，我们称这些函数为 钩子函数
+			*/
+			const vm = new Vue({
+				el: '#app',
+				data: {
+					msg: '生命周期'
+				},
+				methods: {
+					update: function() {
+						this.msg = 'hello';
+					},
+					destroy: function() {
+						this.$destroy();
+						this.msg="no";
+					}
+				},
+				beforeCreate: function() {
+					console.log('beforeCreate');
+				},
+				created: function() {
+					console.log('created');
+				},
+				beforeMount: function() {
+					console.log('beforeMount');
+				},
+				mounted: function() {
+					console.log('mounted');
+				},
+				beforeUpdate: function() {
+					console.log('beforeUpdate');
+				},
+				updated: function() {
+					console.log('updated');
+				},
+				beforeDestroy: function() {
+					console.log('beforeDestroy');
+				},
+				destroyed: function() {
+					console.log('destroyed');
+				}
+
+			});
+		</script>
+	</body>
+</html>

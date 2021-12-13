@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title></title>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<div>
+				<span>用户名</span>
+				<span><input type="text" v-model.lazy="uname" @focus="clearTip"></span>
+				<span>{{tip}}</span>
+			</div>
+		</div>
+		<script src="js/vue.js"></script>
+		<script>
+			const vm = new Vue({
+				el: '#app',
+				data: {
+					uname: '',
+					tip: ''
+				},
+				methods: {
+					clearTip: function() {
+						this.tip = '';
+					},
+					checkName: function(uname) {
+						let that = this;
+						setTimeout(function() {
+							if (uname == "admin" || uname == "luofang") {
+								that.tip = '用户名可用';
+							} else {
+								that.tip = '用户名已经被使用啦';
+							}
+						}, 1000);
+					}
+				},
+				watch: {
+					uname: function(val) {
+						// admin和luofang 可用，其他不可用
+						this.checkName(val);
+						this.tip = '正在验证中...'
+
+					}
+				}
+			});
+		</script>
+	</body>
+</html>

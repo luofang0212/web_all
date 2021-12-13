@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title></title>
+		<style>
+			[v-cloak] {
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<div>
+				<span>姓</span>
+				<span>
+					<input type="text" v-model="fistName" />
+				</span>
+			</div>
+			<div>
+				<span>名</span>
+				<span>
+					<input type="text" v-model="lastName" />
+				</span>
+			</div>
+			<div>
+				<span>姓名: </span>
+				<span v-cloak>{{fullName}}</span>
+			</div>
+		</div>
+		<script src="js/vue.js"></script>
+		<script>
+			// 使用watch来响应数据的变化
+			// 一般用于异步或者开销较大的操作
+			// watch属性一定是data中已经存在的数据
+			const vm = new Vue({
+				el: '#app',
+				data: {
+					fistName: '',
+					lastName: '',
+					fullName: ''
+				},
+				// watch属性定义和data、methods是平级
+				// 一旦监听的对应值有变化，就会自动触发watch里的方法
+				watch:{
+					// 这里的fistName对应的是data里的fistName
+					fistName:function(val){
+						this.fullName = val + this.lastName;
+					},
+					// 这里对应的lastName对应的是data里的lastName
+					lastName:function(val){
+						this.fullName = this.fistName + val;
+					}
+				}
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title></title>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<!-- 调用methods的方法的时候，他每次都会重新调用 -->
+			<div>{{reversMessage()}}</div>
+			<div>{{reversMessage()}}</div>
+			<hr>
+			<!-- 
+			当多次调用 reversString 的时候
+			只要里面的值不做改成，他会把第一次计算的结果直接返回
+			直到data中的值改变，计算属性才会重新发生计算
+			 -->
+			<div>{{reversString}}</div>
+			<div>{{reversString}}</div>
+		</div>
+		<script src="js/vue.js"></script>
+		<script>
+			// 计算属性是基于他们的响应式依赖进行缓存的
+			// 计算属性与方法的区别：计算属性基于依赖进行缓存的，而方法不缓存
+			const vm = new Vue({
+				el: '#app',
+				data: {
+					msg: 'nihao',
+					num: 100
+				},
+				methods:{
+					reversMessage: function(){
+						console.log(this.msg);
+						return this.msg.split('').reverse().join();
+					}
+				},
+				computed:{
+					reversString:function(){
+						console.log('------------------');
+						console.log(this.msg);
+						return this.msg.split('').reverse().join();
+					}
+				}
+			});
+		</script>
+	</body>
+</html>
