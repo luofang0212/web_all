@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			#app {
+				margin: 10px auto;
+				width: 300px;
+				height: 200px;
+			}
+
+			li {
+				list-style: none;
+			}
+
+			.tab li {
+				float: left;
+				width: 80px;
+				height: 38px;
+				font-size: 16px;
+				text-align: center;
+				line-height: 38px;
+				border: 1px solid #0000FF;
+				border-right: 0;
+				border-bottom: 0;
+				cursor: default;
+			}
+
+			.tab li:last-child {
+				border-right: 1px solid #0000FF;
+			}
+
+			.current {
+				background-color: #FFDEAD;
+			}
+
+			.content div {
+				display: none;
+			}
+
+			.content div img {
+				width: 300px;
+			}
+
+			.content .show {
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<ul class="tab">
+				<li :class="currentIndex==index?'current':''" :key="item.name" v-for="(item,index) in fruits"
+					@click="handle(index)">{{item.name}}</li>
+			</ul>
+			<div class="content">
+				<div :class="currentIndex==index?'show':''" v-for="(item,index) in fruits"><img :src="item.img"></div>
+
+			</div>
+		</div>
+		<script src="js/vue.js"></script>
+		<script>
+			var fruits = [{
+					id: 1,
+					name: 'apple',
+					img: 'img/apple.png'
+				}, {
+					id: 2,
+					name: 'orange',
+					img: 'img/orange.png'
+				},
+				{
+					id: 3,
+					name: 'lemon',
+					img: 'img/lemon.png'
+				}
+			];
+
+			var vm = new Vue({
+				el: '#app',
+				data: {
+					currentIndex: 0,
+					fruits: fruits
+				},
+				methods: {
+					handle: function(index) {
+						// 通过传入过来的索引来让当前的 currentIndex 和点击的index 值 相等 
+						// 从而实现 控制类名
+						this.currentIndex = index;
+					}
+				}
+			});
+		</script>
+	</body>
+</html>

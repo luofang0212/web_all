@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			li {
+				list-style: none;
+
+			}
+
+			.nav li a {
+				color: #000000;
+			}
+
+			.vertical-tab {
+				margin: 20px auto;
+				width: 800px;
+			}
+
+			.nav-tabs1 {
+				float: left;
+			}
+
+			.tab-content {
+				float: left;
+				margin: 0 50px;
+			}
+			.tab-pane{
+				display: none;
+			}
+			.tab-content .active{
+				display: block;
+			}
+			.nav-tabs2 {
+				float: left;
+			}
+
+			.nav .active a {
+				display: block;
+				color: #0093D9;
+			}
+
+			.tab-content .active {
+				display: block;
+			}
+			.tab-content h3{
+				color: #0093D9;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 点击tab栏  内容区域显示对应的内容 -->
+		<!-- 如 点击   SECTION 1   则 内容区域显示 对应 SECTION 1 的内容  同时当前 SECTION的字体颜色变成蓝色 -->
+		<div id="app" class="vertical-tab">
+			<!-- 左侧tab栏 -->
+			<ul class="nav nav-tabs1">
+				<li :class="curentIndex==index?'active':''" :key="item.id" v-if="index<3" v-for="(item,index) in datas" @click="change(index)"><a href="#"> {{item.title}} </a></li>
+			</ul>
+			<!-- 内容区域 -->
+			<div class="tab-content tabs">
+				<div class="tab-pane fade" :class="curentIndex==index?'active':''" :key="item.id" v-for="(item,index) in datas">
+					<h3>{{item.title}}</h3>
+					<p>{{item.content}}</p>
+				</div>
+			</div>
+			<ul class="nav nav-tabs2">
+				<!-- 右侧tab栏 -->
+				<li  :class="curentIndex==index?'active':''" :key="item.id" v-if="index>2" v-for="(item,index) in datas" @click="change(index)"><a href="#"> {{item.title}} </a></li>
+
+			</ul>
+		</div>
+		<script src="js/vue.js"></script>
+		<script>
+			var datas = [{
+				id: 1,
+				title: 'Section 1',
+				content: 'content1'
+			}, {
+				id: 2,
+				title: 'Section 2',
+				content: 'content2'
+			}, {
+				id: 3,
+				title: 'Section 3',
+				content: 'content3'
+			}, {
+				id: 4,
+				title: 'Section 4',
+				content: 'content4'
+			}, {
+				id: 5,
+				title: 'Section 5',
+				content: 'content5'
+			}, {
+				id: 6,
+				title: 'Section 6',
+				content: 'content6'
+			}];
+
+			var vm = new Vue({
+				el: '#app',
+				data: {
+					curentIndex:0,
+					datas: datas
+				},
+				methods: {
+					change:function(index){
+						// console.log(index);
+						this.curentIndex = index;
+					}
+				}
+			});
+		</script>
+	</body>
+</html>
