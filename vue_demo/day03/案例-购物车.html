@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			li{
+				list-style: none;
+			}
+				
+			button{
+				outline: none;
+			}
+
+			#app .cart {
+				margin: 0 auto;
+				min-width: 320px;
+				max-width: 750px;
+				width: 100%;
+			}
+
+			.cartTitle {
+				width: 100%;
+				height: 38px;
+				text-align: center;
+				line-height: 38px;
+				background-color: #87CEFA;
+			}
+			.cartList li{
+				position: relative;
+				width: 100%;
+				height: 48px;
+				line-height: 48px;
+				border-bottom: 1px solid #ccc;
+			}
+			.p_img{
+				float: left;
+				margin-left: 12px;
+				width: 40px;
+				height: 45px;
+				text-align: center;
+				vertical-align: middle;
+			}
+			.p_name{
+				float: left;
+				margin-left: 5px;
+				font-size: 16px;
+				font-weight: 500;
+			}
+			.num{
+				float: left;
+				margin: 10px 0 0 85px;
+				
+			}
+			.sub,
+			.add{
+				display: block;
+				margin-top: 5px;
+				float: left;
+				width: 20px;
+				height: 20px;
+				background-color: #A9A9A9;
+				line-height: 20px;
+				text-align: center;
+				cursor: default;
+				font-size: 16px;
+				font-weight: 600;
+				border: none;
+			} 
+				
+			.sub{
+				margin-right: 5px;
+			}
+			.add{
+				margin-left: 5px;
+			}
+			.p_num{
+				float: left;
+				margin-top: 3px;
+				width: 30px;
+				height: 20px;
+			}
+			.del{
+				float: right;
+				margin-right: 18px;
+				font-size: 18px;
+				color: #C81623;
+				cursor: default;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<my-cart></my-cart>
+		</div>
+		<script src="js/vue.js"></script>
+		<script>
+			// 购物车-标题
+			var cartTitle = {
+				template: `
+					<div class="cartTitle">
+						<h3>我的商品</h3>
+					</div>
+				`
+			}
+
+			// 购物车-内容
+			var cartList = {
+				template: `
+					<div class="cartList">
+							<ul>
+								<li>
+									<!-- 商品图片 -->
+									<img src="img/a.jpg" alt="" class="p_img">
+									<!-- 商品名称 -->
+									<span class="p_name">小米手机</span>
+									<!-- 加减法控件 -->
+									<div class="num">
+										<button class="sub">-</button>
+										<input type="text" class="p_num">
+										<button class="add">+</button>
+									</div>
+									<span class="del">x</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+				`
+			}
+
+			// 购物车-结算
+			var cartTotal = {
+				template: `
+					<div>cartTotal</div>
+				`
+			}
+
+			// 定义一个全局组件 my-cart
+			Vue.component('my-cart', {
+				// 引入子组件
+				template: `
+					<div class="cart">
+						<cart-title></cart-title>
+						<cart-list></cart-list>
+						<cart-total></cart-total>
+					</div>
+				`,
+				components: {
+					"cart-title": cartTitle,
+					"cart-list": cartList,
+					"cart-total": cartTotal
+				}
+
+			})
+
+			const vm = new Vue({
+				el: '#app',
+				data: {
+
+				}
+			});
+		</script>
+	</body>
+</html>
