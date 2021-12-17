@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title></title>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<!-- 当我们希望li的样式由外部使用组件的地方定义，因为可能有很多种地方需要使用
+			 该组件，但样式希望不一样 这个时候我们需要使用作用域插槽
+			 -->
+			<fruit-list :fruits="fruits">
+				<template slot-scope="slotProps">
+					<strong>{{slotProps.info.name}}</strong>
+				</template>
+			</fruit-list>
+		</div>
+		<script src="js/vue.js"></script>
+		<script>
+			// 作用域插槽
+			// 父组件对子组件的加工处理
+			// 既可以复用子组件的slot,又可以使slot内容不一致
+			Vue.component('fruit-list', {
+				props: ['fruits'],
+				template: `
+					<div>
+						<ul>
+							<li :key="index" v-for="(item,index) in fruits">
+								<slot :info='item'>{{item.name}}</slot>
+							</li>
+						</ul>
+					</div>
+				`
+			});
+			const vm = new Vue({
+				el: '#app',
+				data: {
+					fruits: [{
+						id: 1,
+						name: 'lemon'
+					}, {
+						id: 2,
+						name: 'apple'
+					}, {
+						id: 3,
+						name: 'orange'
+					}, {
+						id: 4,
+						name: 'banana'
+					}]
+				}
+			});
+		</script>
+	</body>
+</html>
