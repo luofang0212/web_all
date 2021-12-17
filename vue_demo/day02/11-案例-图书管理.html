@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			[v-cloak] {
+				display: none;
+			}
+
+			#app {
+				margin: 20px auto;
+				width: 500px;
+			}
+
+			.books_form {
+				width: 100%;
+				height: 38px;
+				background-color: #F0E68C;
+				line-height: 38px;
+			}
+
+			.books_form input {
+				padding: 0 5px;
+				width: 130px;
+				height: 21px;
+			}
+
+			.no_id {
+				float: left;
+				margin-left: 12px;
+			}
+
+			.book_name {
+				margin-left: 12px;
+				float: left;
+			}
+
+			.books_form button {
+				margin-left: 14px;
+				width: 60px;
+				height: 25px;
+			}
+
+			// 表格
+			.books_table {
+				width: 100%;
+			}
+
+			.books_table table {
+				border-collapse: collapse;
+				border-top: 1px solid #008000;
+
+			}
+
+			.books_table thead {
+				height: 28px;
+				line-height: 28px;
+				background-color: #F0E68C;
+			}
+
+			.books_table thead th {
+				width: 200px;
+			}
+
+			.books_table tr {
+				border: 1px dotted #F0E68C;
+			}
+
+			.books_table tbody tr td:nth-child(2) {
+				width: 260px;
+			}
+
+			.books_table tbody td {
+				width: 200px;
+				height: 28px;
+				text-align: center;
+			}
+
+			// 统计
+			.total_book {
+				width: 100%;
+				height: 28px;
+				line-height: 28px;
+			}
+
+			.total_book span {
+				color: orange;
+				margin: 0 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<div class="books_form">
+				<div class="no_id">
+					<span>编号</span>
+					<span>
+						<input type="text" v-model="no_id" :disabled="flag" />
+					</span>
+				</div>
+				<div class="book_name">
+					<span>名称</span>
+					<span>
+						<input type="text" v-model="book_name" />
+					</span>
+				</div>
+				<button type="button" @click="handle" :disabled="submitFlag">提交</button>
+			</div>
+			<div class="books_table">
+				<table border="1" cellpadding="0" cellspacing="0">
+					<thead>
+						<tr>
+							<th>编号</th>
+							<th>名称</th>
+							<th>时间</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr :key="item.item" v-for="(item,index) in books">
+							<td v-cloak>{{item.id}}</td>
+							<td v-cloak>{{item.name}}</td>
+							<td v-cloak>{{item.date}}</td>
+							<td>
+								<a href="javascript:;" @click="toEdit(item.id)">修改</a>
+								<span>|</span>
+								<a href="javascript:;" @click="toDel(item.id)">删除</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="total_book">总共有<span>{{total}}</span>本书</div>
+		</div>
+		<script src="js/vue.js"></script>
+		<script>
+			const vm = new Vue({
+				el: '#app',
+				data: {
+					books: [],
+					no_id: '',
+					book_name: '',
+					flag: false,
+					submitFlag: false
+				},
+				methods: {
+					// 添加图书
+					// 如果值存在，则更新数据，否则新增
+					handle: function() {
+						// 修改 编号不能进行修改，置灰 flag=true 提交时，只更新当前值
+						if (this.flag) {
+							this.books.some((item) => {
+								if (this.no_id == item.id) {
+									// 如果id一致，则将已修改的名称给新的数组
+									if (this.book_name == '') {
+										alert("名称不能为空");
+										return true;
+									}
+									item.name = this.book_name;
+								}
+							});
+							this.flag = false;
+						} else { // 状态为false，则为新增
+							let book = {}
+							book.id = this.no_id;
+							book.name = this.book_name;
+							book.date = '2021-09-12';
+							if (book.id == '' || book.name == '') {
+								alert("编号和名称，不能为空");
+								return;
+							}
+							// 将书本信息添加到数组中
+							this.books.unshift(book);
+						}
+						// 清空数据
+						this.no_id = '';
+						this.book_name = '';
+					},
+					// 修改图书 
+					toEdit: function(id) {
+						// 禁用编号修改
+						this.flag = true;
+						console.log(id);
+						// 根据id查出要编辑的数据
+						var book = this.books.filter(function(item) {
+							return item.id == id;
+						});
+						console.log(book);
+						this.no_id = book[0].id;
+						this.book_name = book[0].name;
+					},
+					// 删除图书
+					toDel: function(id) {
+						console.log(id);
+						var book = this.books.filter((item) => {
+							return item.id != id;
+						});
+						this.books = book;
+					}
+				},
+				// 计算属性
+				computed: {
+					total: function() {
+						// 计算图书的总数
+						return this.books.length;
+					}
+				},
+				watch: {
+					no_id: function(val) {
+						if (!this.flag) {
+							this.submitFlag = this.books.some((item) => {
+								if (item.id == val) {
+									return true;
+								}
+							});
+						} else {
+							this.submitFlag = false;
+							if (this.book_name != '' && val != '') {
+								this.submitFlag = false;
+							}
+						}
+					}
+				},
+				// 
+				mounted: function() {
+					// 书的数据
+					var book = [{
+						id: 1,
+						name: '三国演义',
+						date: '2021-10-12'
+					}, {
+						id: 2,
+						name: '水浒传',
+						date: '2021-10-12'
+					}, {
+						id: 3,
+						name: '红楼梦',
+						date: '2021-10-12'
+					}, {
+						id: 4,
+						name: '西游记',
+						date: '2021-09-12'
+					}];
+					this.books = book;
+				}
+			});
+		</script>
+	</body>
+</html>
